@@ -14,13 +14,15 @@ $Instagram = new Instagram('1007723618.ab103e5.00083918867e49d08e14bcd1076054df'
 		        <a class="instagramSection-photo-link" href="<?php echo $photo['link']; ?>">
 		            <img class="instagramSection-photo-link-image" src="<?php echo $img['url'] ?>">
 		        </a>
+		        <p class="instagramSection-photo-caption">
+		        	<?php echo $caption; ?>
+	        	</p>
 		        <p class="instagramSection-photo-date" number="<?php echo $i; ?>">
 		        	<?php echo $photo['created_time']; ?>
 	        	</p>
 	        	<p class="instagramSection-photo-likes">
-	        		<?php echo 'Likes: ' . $photo['likes']['count']; ?>
+	        		<?php echo '<i class="fa fa-heart"></i> ' . $photo['likes']['count']; ?>
 	        	</p>
-		        <p class="instagramSection-photo-caption"><?php echo $caption; ?></p>
 	        </div>
 	    <?php
 	    $i++;

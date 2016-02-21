@@ -11,6 +11,27 @@
 	.instagramSection-photo-link{
 		display: inline-block;
 	}
+	.instagramSection-photo-date,
+	.instagramSection-photo-likes{
+		@include font-size(12);
+	}
+	.instagramSection-photo-date{
+		float: left;
+	}
+	.instagramSection-photo-likes{
+		float: right;
+	}
+	.instagramSection-photo-caption{
+		padding-bottom: 10px;
+		word-wrap: break-word;
+	}
+	.instagramSection-photo-caption-link{
+		color: lighten($mauve, 30%);
+		@include transition(color 0.5s ease);
+		&:hover{
+			color: lighten($mauve, 10%);
+		}
+	}
 }
 
 @media only screen and (min-width: $medium){

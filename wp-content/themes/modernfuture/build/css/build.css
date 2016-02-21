@@ -23,7 +23,7 @@ time, mark, audio, video {
 html {
   font-size: 62.5%;
   background-color: black;
-  background-image: url("../../library/img/bg.jpg");
+  background-image: url("../../library/img/bg2.jpg");
   background-size: cover; }
 
 body {
@@ -58,7 +58,8 @@ footer, header, hgroup, menu, nav, section {
 
   .menu-item {
     text-align: center;
-    position: relative; }
+    position: relative;
+    font-family: 'Futura'; }
 
   .menu-item-link {
     display: inline-block;
@@ -107,7 +108,32 @@ footer, header, hgroup, menu, nav, section {
     margin-bottom: 40px; }
 
   .instagramSection-photo-link {
-    display: inline-block; } }
+    display: inline-block; }
+
+  .instagramSection-photo-date,
+  .instagramSection-photo-likes {
+    font-size: 12px;
+    font-size: 1.2rem; }
+
+  .instagramSection-photo-date {
+    float: left; }
+
+  .instagramSection-photo-likes {
+    float: right; }
+
+  .instagramSection-photo-caption {
+    padding-bottom: 10px;
+    word-wrap: break-word; }
+
+  .instagramSection-photo-caption-link {
+    color: #ac8eba;
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease;
+    -ms-transition: color 0.5s ease;
+    -o-transition: color 0.5s ease;
+    transition: color 0.5s ease; }
+    .instagramSection-photo-caption-link:hover {
+      color: #7b558d; } }
 @media only screen {
   .showsSection {
     display: -webkit-box;
