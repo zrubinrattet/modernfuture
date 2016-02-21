@@ -1,0 +1,33 @@
+@media only screen {
+	
+}
+
+@media only screen and (min-width: $medium){
+
+}
+
+@media only screen and (min-width: $large){
+	.aside{
+		float: left;
+		width: 250px;
+		height: 100%;
+		background-color: rgba(255,255,255,0.15);
+		padding: 40px;
+		box-sizing: border-box;
+	}	
+	.menu{
+		list-style: none;
+		padding-top: 40px;
+	}
+	.menu-item{
+		text-align: center;
+	}
+	.menu-item-link{
+		display: inline-block;
+		font-size: 24px;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 20px 0;
+		color: white;
+	}
+}

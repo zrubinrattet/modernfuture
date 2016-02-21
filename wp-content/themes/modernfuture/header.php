@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<title><?php echo get_bloginfo('name') . ' | ' . (!is_null($post->post_name) ? ucwords($post->post_name) : '404')?></title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 		<?php wp_head(); ?>		
 
 		<!--[if lt IE 9]>

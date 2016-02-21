@@ -21,11 +21,14 @@ time, mark, audio, video {
   vertical-align: baseline; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  background-color: black; }
 
 body {
   font-size: 16px;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  font-family: 'OpenSans';
+  color: white; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -37,14 +40,32 @@ footer, header, hgroup, menu, nav, section {
     float: right;
     width: calc(100% - 250px); } }
 @media only screen and (min-width: 1025px) {
-  .menu {
+  .aside {
     float: left;
     width: 250px;
     height: 100%;
-    background-color: blue; } }
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    box-sizing: border-box; }
+
+  .menu {
+    list-style: none;
+    padding-top: 40px; }
+
+  .menu-item {
+    text-align: center; }
+
+  .menu-item-link {
+    display: inline-block;
+    font-size: 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 20px 0;
+    color: white; } }
 @media only screen {
   .instagramSection {
-    overflow: scroll; } }
+    overflow: scroll;
+    text-align: center; } }
 @media only screen {
   .showsSection {
     display: -webkit-box;

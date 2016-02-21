@@ -28,9 +28,12 @@ time, mark, audio, video {
 }
 html{
 	font-size: 62.5%; // base 10 for fonts
+	background-color: black;
 }
 body{
 	@include font-size(16);
+	font-family: 'OpenSans';
+	color: white;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -39,5 +42,5 @@ footer, header, hgroup, menu, nav, section {
 }
 
 
-@import "fullpage", "menu";
+@import "fullpage", "aside";
 @import "pages/instagram_feed", "pages/shows", "pages/contact";
