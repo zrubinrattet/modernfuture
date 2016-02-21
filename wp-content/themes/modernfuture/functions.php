@@ -22,9 +22,12 @@ add_action( 'wp_enqueue_scripts', function(){
 });
 
 function enqueue_javascript(){
+	wp_enqueue_script( 'slimscroll' );
+	wp_enqueue_script( 'fullpage' );
 	wp_enqueue_script( 'theme' );
 }
 function enqueue_styles(){
+	wp_enqueue_style( 'fullpage' );
 	wp_enqueue_style( 'fontawesome' );
 	wp_enqueue_style( 'theme' );
 }
@@ -32,12 +35,15 @@ function enqueue_styles(){
 function register_javascript(){
 	$js_dir = get_template_directory_uri() . '/build/js';
 	wp_register_script( 'theme', $js_dir . '/build.js', array('jquery'));
+	wp_register_script( 'slimscroll', '//cdn.rawgit.com/alvarotrigo/fullPage.js/master/vendors/jquery.slimscroll.min.js', array('jquery'));
+	wp_register_script( 'fullpage', '//cdn.rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.min.js', array('jquery'));
 }
 
 function register_styles(){
 	$styles_dir = get_template_directory_uri() . '/build/css';
 	wp_register_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 	wp_register_style( 'theme', $styles_dir . '/build.css' );
+	wp_register_style( 'fullpage', 'https://cdn.rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.css');
 }
 
 // make theme directory available to javascript
@@ -48,5 +54,6 @@ function localize_theme_directory(){
 	wp_localize_script( 'theme', 'SiteParameters', $site_parameters );
 }
 
+require('classes/instagram.php')
 
 ?>

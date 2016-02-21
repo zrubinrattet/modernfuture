@@ -2,7 +2,7 @@
 // global & reset stuff //
 //////////////////////////
 
-@import "vars", "mixins";
+@import "vars", "flexbox", "mixins";
 
 html,body{
 	width: 100%;
@@ -29,8 +29,15 @@ time, mark, audio, video {
 html{
 	font-size: 62.5%; // base 10 for fonts
 }
+body{
+	@include font-size(16);
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+
+@import "fullpage", "menu";
+@import "pages/instagram_feed", "pages/shows", "pages/contact";

@@ -1,0 +1,15 @@
+@media only screen {
+	.contactSection{
+		@include flexbox();
+		@include align-items(center);
+		@include justify-content(center);
+	}	
+}
+
+@media only screen and (min-width: $medium){
+
+}
+
+@media only screen and (min-width: $large){
+	
+}

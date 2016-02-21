@@ -1,0 +1,14 @@
+@media only screen {
+	
+}
+
+@media only screen and (min-width: $medium){
+
+}
+
+@media only screen and (min-width: $large){
+	#fullpage{
+		float: right;
+		width: calc(100% - 250px);
+	}
+}
