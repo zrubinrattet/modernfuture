@@ -1,7 +1,15 @@
 @media only screen {
 	.instagramSection{
-		overflow: scroll;
-		text-align: center;
+		text-align: center;	
+		max-width: 1080px;
+		margin: 0 auto;
+	}
+	.instagramSection-photo{
+		width: 320px;
+		margin-bottom: 40px;
+	}
+	.instagramSection-photo-link{
+		display: inline-block;
 	}
 }
 

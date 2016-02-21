@@ -29,17 +29,23 @@ time, mark, audio, video {
 html{
 	font-size: 62.5%; // base 10 for fonts
 	background-color: black;
+	background-image: url('../../library/img/bg.jpg');
+	background-size: cover;
 }
 body{
 	@include font-size(16);
 	font-family: 'OpenSans';
 	color: white;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+
+
 
 
 @import "fullpage", "aside";
