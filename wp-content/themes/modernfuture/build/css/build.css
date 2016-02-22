@@ -61,6 +61,14 @@ footer, header, hgroup, menu, nav, section {
     position: relative;
     font-family: 'Futura'; }
 
+  .menu-item.active {
+    -moz-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    opacity: 1; }
+
   .menu-item-link {
     display: inline-block;
     font-size: 24px;
@@ -90,7 +98,7 @@ footer, header, hgroup, menu, nav, section {
     -o-transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
     transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out; }
 
-  .menu-item-hover--active, .menu-item-link:hover ~ .menu-item-hover {
+  .menu-item-hover--active, .menu-item.active .menu-item-hover, .menu-item-link:hover ~ .menu-item-hover {
     -moz-transform: scaleY(1);
     -o-transform: scaleY(1);
     -ms-transform: scaleY(1);

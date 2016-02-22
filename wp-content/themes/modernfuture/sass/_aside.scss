@@ -26,6 +26,13 @@
 		position: relative;
 		font-family: 'Futura';
 	}
+	.menu-item.active{
+		@include transform(scaleY(1));
+		opacity: 1;
+		.menu-item-hover{
+			@extend .menu-item-hover--active;
+		}
+	}
 	.menu-item-link{
 		display: inline-block;
 		font-size: 24px;

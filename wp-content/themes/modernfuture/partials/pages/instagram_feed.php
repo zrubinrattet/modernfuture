@@ -2,7 +2,7 @@
 $Instagram = new Instagram('1007723618.ab103e5.00083918867e49d08e14bcd1076054df');
 // var_dump($Instagram::$result['data']);
 ?>
-<section class="instagramSectionContainer section">	
+<section class="instagramSectionContainer section" data-anchor="instagramSection">	
 	<div class="instagramSection grid">
 	<?php
 	$i = 1;

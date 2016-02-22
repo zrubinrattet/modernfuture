@@ -9,6 +9,8 @@
 			continuousVertical : true,
 			easingcss3 : 'ease-in-out',
 			touchSensitivity : 10,
+			anchors : ['instagramSection', 'showsSection', 'contactSection'],
+			menu : $('#menu'),
 			onLeave : function(index, nextIndex, direction){
 				if(direction == 'down' && nextIndex == 1){
 					$('.fp-scrollable').slimScroll({ scrollTo: '0px' });	
@@ -18,7 +20,10 @@
 				}
 			},
 		});		
-
+		if($('.menu-item').hasClass('active')){
+			console.log('im here');
+			$('.fp-scrollable').slimScroll({ scrollTo: '0px' });
+		}
 		$(window).on('load', function(){
 			$('.grid').masonry({
 			  itemSelector: '.grid-item',
