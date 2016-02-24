@@ -162,6 +162,7 @@ footer, header, hgroup, menu, nav, section {
 
   .instagramSection-photo-videoButton {
     display: block;
+    pointer-events: none;
     font-size: 64px;
     font-size: 6.4rem;
     position: absolute;

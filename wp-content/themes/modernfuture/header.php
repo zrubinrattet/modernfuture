@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title><?php echo get_bloginfo('name') . ' | ' . (!is_null($post->post_name) ? ucwords($post->post_name) : '404')?></title>
+		<title><?php echo get_bloginfo('name');?></title>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 		<?php wp_head(); ?>		
 

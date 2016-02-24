@@ -29,6 +29,7 @@
 	}
 	.instagramSection-photo-videoButton{
 		display: block;
+		pointer-events: none;
 		@include font-size(64);
 		@include centerer;
 	}

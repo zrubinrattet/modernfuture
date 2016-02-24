@@ -40,7 +40,7 @@
 			instagramSection : {
 				dates : $('.instagramSection-photo-date'),
 				captions : $('.instagramSection-photo-caption'),
-				videos : $('.instagramSection-photo-videoContainer'),
+				videos : $('.instagramSection-photo-video'),
 				_init : function(){
 					app.instagramSection._cleanDates();
 					app.instagramSection._parseCaption();
@@ -98,6 +98,7 @@
 				_initVideo : function(){
 					for(var i = 0; i < app.instagramSection.videos.length; i++){
 						$(app.instagramSection.videos[i]).click(function(e){
+							console.log($(e.target));
 							if(e.target.paused){
 								e.target.play();	
 								$($(e.target).siblings('.instagramSection-photo-videoButton')).addClass('instagramSection-photo-videoButton-hidden');
