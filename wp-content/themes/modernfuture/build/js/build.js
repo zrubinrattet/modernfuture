@@ -40,9 +40,12 @@
 			instagramSection : {
 				dates : $('.instagramSection-photo-date'),
 				captions : $('.instagramSection-photo-caption'),
+				videos : $('.instagramSection-photo-videoContainer'),
 				_init : function(){
 					app.instagramSection._cleanDates();
 					app.instagramSection._parseCaption();
+					app.instagramSection._initVideo();
+					$('.fancybox').fancybox();
 				},
 				_cleanDates : function(){
 					for(var i = 0; i < app.instagramSection.dates.length; i++){
@@ -56,7 +59,7 @@
 						// @ tags and # tags
 						if(text.indexOf('@') > -1 || text.indexOf('#') > -1){
 							// var matches = text.match(/([@#])\w\S+/g);
-							var matches = text.match(/\B[@#]([a-z0-9_!]{2,})(?![~!@#$%^&*()=+_`\-\|\/'\[\]\{\}]|[?.,]*\w)/ig);
+							var matches = text.match(/\B[@#]([a-z0-9_]{2,})(?![~@#$%^&*()=+_`\-\|\/\[\]\{\}]|[?.,]*\w)/ig);
 							if(matches != null){
 								for(var k = 0; k < matches.length; k++){
 									// @ tags
@@ -90,6 +93,20 @@
 							}
 						}
 						app.instagramSection.captions[i].innerHTML = text;
+					}
+				},
+				_initVideo : function(){
+					for(var i = 0; i < app.instagramSection.videos.length; i++){
+						$(app.instagramSection.videos[i]).click(function(e){
+							if(e.target.paused){
+								e.target.play();	
+								$($(e.target).siblings('.instagramSection-photo-videoButton')).addClass('instagramSection-photo-videoButton-hidden');
+							}
+							else{
+								e.target.pause();
+								$($(e.target).siblings('.instagramSection-photo-videoButton')).removeClass('instagramSection-photo-videoButton-hidden');
+							}
+						});
 					}
 				},
 			},

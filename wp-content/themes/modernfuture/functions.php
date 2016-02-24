@@ -22,12 +22,14 @@ add_action( 'wp_enqueue_scripts', function(){
 });
 
 function enqueue_javascript(){
+	wp_enqueue_script( 'fancyboxjs' );
 	wp_enqueue_script( 'moment' );
 	wp_enqueue_script( 'slimscroll' );
 	wp_enqueue_script( 'fullpage' );
 	wp_enqueue_script( 'theme' );
 }
 function enqueue_styles(){
+	wp_enqueue_style( 'fancyboxcss' );
 	wp_enqueue_style( 'fullpage' );
 	wp_enqueue_style( 'fontawesome' );
 	wp_enqueue_style( 'theme' );
@@ -39,6 +41,7 @@ function register_javascript(){
 	wp_register_script( 'slimscroll', '//cdn.rawgit.com/alvarotrigo/fullPage.js/master/vendors/jquery.slimscroll.min.js', array('jquery'));
 	wp_register_script( 'fullpage', '//cdn.rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.min.js', array('jquery'));
 	wp_register_script( 'moment', '//cdn.rawgit.com/moment/moment/develop/min/moment.min.js');
+	wp_register_script( 'fancyboxjs', '//cdn.rawgit.com/fancyapps/fancyBox/master/source/jquery.fancybox.js', array('jquery'));
 }
 
 function register_styles(){
@@ -46,6 +49,7 @@ function register_styles(){
 	wp_register_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 	wp_register_style( 'theme', $styles_dir . '/build.css' );
 	wp_register_style( 'fullpage', 'https://cdn.rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.css');
+	wp_register_style( 'fancyboxcss', '//cdn.rawgit.com/fancyapps/fancyBox/master/source/jquery.fancybox.css');
 }
 
 // make theme directory available to javascript

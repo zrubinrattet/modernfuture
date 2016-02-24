@@ -17,6 +17,7 @@
 		height: 100%;
 		background-color: rgba(255,255,255,0.1);
 		box-sizing: border-box;
+		position: relative;
 	}	
 	.logoContainer{
 		padding: 40px;
@@ -67,4 +68,29 @@
 		@include transform(scaleY(1));
 		opacity: 1;
 	}
+	.socialContainer{
+		position: absolute;
+		bottom: 40px;
+		left: 50%;
+		@include transform(translate(-50%, 0));
+	}
+	.social-item{
+		display: inline-block;
+	}
+	.social-item-link{
+		color: white;
+		@include font-size(30);
+		padding: 0 10px;
+	}
+
+
+
+
+
+
+
+
+
+
+
 }

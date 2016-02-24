@@ -1,6 +1,6 @@
 @media only screen {
 	.instagramSectionWrapper{
-
+		padding-top: 40px;
 	}
 	.instagramSection{
 		text-align: center;
@@ -14,9 +14,26 @@
 		}
 		margin-bottom: 40px;
 	}
-	.instagramSection-photo-link{
+	.instagramSection-photo-link,
+	.instagramSection-photo-videoContainer{
 		display: inline-block;
 		width: 100%;
+		position: relative;
+	}
+	.instagramSection-photo-videoContainer{
+		cursor: pointer;
+	}
+	.instagramSection-photo-video{
+		width: 360px;
+		box-sizing: border-box;
+	}
+	.instagramSection-photo-videoButton{
+		display: block;
+		@include font-size(64);
+		@include centerer;
+	}
+	.instagramSection-photo-videoButton-hidden{
+		display: none;
 	}
 	.instagramSection-photo-date,
 	.instagramSection-photo-likes{
@@ -32,12 +49,18 @@
 		padding-bottom: 10px;
 		word-wrap: break-word;
 	}
-	.instagramSection-photo-caption-link{
+	.instagramSection-photo-caption-link,
+	.instagramSection-photo-permalink{
 		color: lighten($mauve, 30%);
 		@include transition(color 0.5s ease);
 		&:hover{
 			color: lighten($mauve, 10%);
 		}
+	}
+	.instagramSection-photo-permalink{
+		@include font-size(12);
+		float: left;
+		padding-left: 48px;
 	}
 }
 @media only screen and (min-width: 720px){
@@ -54,6 +77,13 @@
 	}
 	.instagramSection{
 		max-width: 720px;
+	}
+	.instagramSection-photo-video{
+		width: 300px;
+		box-sizing: border-box;
+	}
+	.instagramSection-photo-permalink{
+		padding-left: 20px;
 	}
 }
 @media only screen and (min-width: 1330px){
