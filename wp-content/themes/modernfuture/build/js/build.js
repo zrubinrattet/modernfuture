@@ -21,7 +21,6 @@
 			},
 		});		
 		if( $('.menu-item').hasClass('active') ){
-			console.log('im here');
 			$('.fp-scrollable').slimScroll({ scrollTo: '0px' });
 		}
 		$(window).on('load', function(){

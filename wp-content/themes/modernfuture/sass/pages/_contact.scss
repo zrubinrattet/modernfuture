@@ -4,6 +4,48 @@
 		@include align-items(center);
 		@include justify-content(center);
 	}	
+	.wpcf7-form-control.wpcf7-submit{
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background-color: $mauve;
+		border: 0;
+		color: white;
+		font-family: 'Futura';
+		text-transform: uppercase;
+		font-size: 14px;
+		padding: 10px 20px;
+		margin-top: 5px;
+		cursor: pointer;
+	}
+	.wpcf7-form{
+		input,textarea,select{
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			border: 1px solid grey;
+			background-color: rgba(255,255,255,0.1);
+			outline: none;
+			color: white;
+			border-radius: 0px;
+			-webkit-border-radius: 0px;
+			padding: 5px;
+			margin-bottom: 10px;
+			margin-top: 5px;
+		}
+		select{
+			padding: 5px 25px 5px 5px;
+		}
+		.wpcf7-form-control-wrap.checkbox-833{
+			&:after{
+				font-family: 'FontAwesome';
+				content: '\f107';
+				position: relative;
+				right: 20px;
+				top: 2px;
+			}
+		}
+	}
 }
 
 @media only screen and (min-width: $medium){
