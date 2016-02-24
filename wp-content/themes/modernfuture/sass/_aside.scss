@@ -1,5 +1,8 @@
 @media only screen {
-	
+	.aside{
+		display: none;
+
+	}
 }
 
 @media only screen and (min-width: $medium){
@@ -8,6 +11,7 @@
 
 @media only screen and (min-width: $large){
 	.aside{
+		display: block;
 		float: left;
 		width: 250px;
 		height: 100%;

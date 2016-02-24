@@ -1,15 +1,22 @@
 @media only screen {
+	.instagramSectionWrapper{
+
+	}
 	.instagramSection{
-		text-align: center;	
-		max-width: 1080px;
+		text-align: center;
+		max-width: 360px;
 		margin: 0 auto;
 	}
 	.instagramSection-photo{
-		width: 320px;
+		width: 100%;
+		img{
+			width: 100%;
+		}
 		margin-bottom: 40px;
 	}
 	.instagramSection-photo-link{
 		display: inline-block;
+		width: 100%;
 	}
 	.instagramSection-photo-date,
 	.instagramSection-photo-likes{
@@ -33,11 +40,24 @@
 		}
 	}
 }
-
-@media only screen and (min-width: $medium){
-
+@media only screen and (min-width: 720px){
+	.instagramSection-photo{
+		width: 360px;
+		padding: 0 30px;
+		box-sizing: border-box;
+		img{
+			width: 100%;
+		}
+	}
+	.instagramSection-photo-link{
+		width: auto;
+	}
+	.instagramSection{
+		max-width: 720px;
+	}
 }
-
-@media only screen and (min-width: $large){
-	
+@media only screen and (min-width: 1330px){
+	.instagramSection{
+		max-width: 1080px;
+	}
 }

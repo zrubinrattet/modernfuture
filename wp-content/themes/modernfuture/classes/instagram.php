@@ -1,7 +1,7 @@
 <?php
 class Instagram {
     public static $result;
-    public static $display_size = 'low_resolution'; // you can choose between "low_resolution", "thumbnail" and "standard_resolution"
+    public static $display_size = 'standard_resolution'; // you can choose between "low_resolution", "thumbnail" and "standard_resolution"
     public static $access_token;
     public static $count = 30;
     public static function fetch($url){

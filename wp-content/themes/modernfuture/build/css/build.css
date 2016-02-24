@@ -37,12 +37,19 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
+@media only screen {
+  #fullpage {
+    width: 100%; } }
 @media only screen and (min-width: 1025px) {
   #fullpage {
     float: right;
     width: calc(100% - 250px); } }
+@media only screen {
+  .aside {
+    display: none; } }
 @media only screen and (min-width: 1025px) {
   .aside {
+    display: block;
     float: left;
     width: 250px;
     height: 100%;
@@ -108,15 +115,18 @@ footer, header, hgroup, menu, nav, section {
 @media only screen {
   .instagramSection {
     text-align: center;
-    max-width: 1080px;
+    max-width: 360px;
     margin: 0 auto; }
 
   .instagramSection-photo {
-    width: 320px;
+    width: 100%;
     margin-bottom: 40px; }
+    .instagramSection-photo img {
+      width: 100%; }
 
   .instagramSection-photo-link {
-    display: inline-block; }
+    display: inline-block;
+    width: 100%; }
 
   .instagramSection-photo-date,
   .instagramSection-photo-likes {
@@ -142,6 +152,22 @@ footer, header, hgroup, menu, nav, section {
     transition: color 0.5s ease; }
     .instagramSection-photo-caption-link:hover {
       color: #7b558d; } }
+@media only screen and (min-width: 720px) {
+  .instagramSection-photo {
+    width: 360px;
+    padding: 0 30px;
+    box-sizing: border-box; }
+    .instagramSection-photo img {
+      width: 100%; }
+
+  .instagramSection-photo-link {
+    width: auto; }
+
+  .instagramSection {
+    max-width: 720px; } }
+@media only screen and (min-width: 1330px) {
+  .instagramSection {
+    max-width: 1080px; } }
 @media only screen {
   .showsSection {
     display: -webkit-box;

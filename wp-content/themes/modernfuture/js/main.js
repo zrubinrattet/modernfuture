@@ -20,14 +20,15 @@
 				}
 			},
 		});		
-		if($('.menu-item').hasClass('active')){
+		if( $('.menu-item').hasClass('active') ){
 			console.log('im here');
 			$('.fp-scrollable').slimScroll({ scrollTo: '0px' });
 		}
 		$(window).on('load', function(){
 			$('.grid').masonry({
 			  itemSelector: '.grid-item',
-			  columnWidth: 360
+			  columnWidth: 360,
+			  fitWidth: true,
 			});
 		});
 
