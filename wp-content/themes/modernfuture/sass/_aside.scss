@@ -1,7 +1,50 @@
 @media only screen {
 	.aside{
 		display: none;
-
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		padding: 40px;
+		box-sizing: border-box;
+		background-color: rgba(95,66,109,0.8);
+	}
+	.menuToggleContainer{
+		position: fixed;
+		z-index: 3;
+		@include font-size(24);
+		right: 10px;
+		cursor: pointer;
+	}
+	.logo{
+		width: 15%;
+		min-width: 100px;
+	}
+	.logoContainer,
+	.menu,
+	.social{
+		list-style: none;
+		text-align: center;
+	}
+	.menu{
+		padding: 20px 0;
+	}
+	.menu-item-link{
+		font-family: 'Futura';
+		color: white;
+		text-transform: uppercase;
+		text-decoration: none;
+		@include font-size(36);
+		padding: 10px 0;
+		display: block;
+	}
+	.social-item{
+		display: inline-block;
+		padding: 0 15px;
+	}
+	.social-item-link{
+		color: white;
+		@include font-size(24);
 	}
 }
 
@@ -18,9 +61,17 @@
 		background-color: rgba(255,255,255,0.1);
 		box-sizing: border-box;
 		position: relative;
+		padding: 0;
 	}	
+	.menuToggleContainer{
+		display: none;
+	}
 	.logoContainer{
 		padding: 40px;
+	}
+	.logo{
+		width: auto;
+		min-width: 0;
 	}
 	.menu{
 		list-style: none;
@@ -76,21 +127,11 @@
 	}
 	.social-item{
 		display: inline-block;
+		padding: 0;
 	}
 	.social-item-link{
 		color: white;
 		@include font-size(30);
 		padding: 0 10px;
 	}
-
-
-
-
-
-
-
-
-
-
-
 }

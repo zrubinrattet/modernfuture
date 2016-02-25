@@ -33,8 +33,45 @@
 
 		var app = {
 			menu : {
+				toggleContainer : $('.menuToggleContainer'),
+				toggle : $('.menuToggle'),
+				container : $('.aside'),
+				item : $('.menu-item'),
 				_init : function(){
-
+					app.menu.toggleContainer.click(app.menu._clickHandler);
+					app.menu.item.click(app.menu._itemClickHandler);
+					$(window).on('resize', app.menu._resizeHandler);
+				},
+				_itemClickHandler : function(){
+					if($(window).width() < 1025){
+						app.menu._closeMenu();
+					}
+				},
+				_clickHandler : function(){
+					if( app.menu.toggle.hasClass('fa-bars') ){
+						app.menu._openMenu();
+					}
+					else{
+						app.menu._closeMenu();	
+					}
+				},
+				_openMenu : function(){
+					app.menu.container.show();
+					app.menu.toggle.removeClass('fa-bars');
+					app.menu.toggle.addClass('fa-times');
+				},
+				_closeMenu : function(){
+					app.menu.container.hide();
+					app.menu.toggle.addClass('fa-bars');
+					app.menu.toggle.removeClass('fa-times');
+				},
+				_resizeHandler : function(){
+					if($(window).width() > 1024){
+						app.menu.container.show();
+					}
+					else{
+						app.menu._closeMenu();
+					}
 				},
 			},
 			instagramSection : {
@@ -113,6 +150,7 @@
 			},
 			_init : function(){
 				app.instagramSection._init();
+				app.menu._init();
 			},
 		}
 		app._init();
