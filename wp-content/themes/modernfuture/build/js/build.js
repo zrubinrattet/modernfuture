@@ -4,32 +4,7 @@
     };
 	$(document).ready(function(){
 
-		$('#fullpage').fullpage({
-			scrollOverflow : true,
-			continuousVertical : true,
-			easingcss3 : 'ease-in-out',
-			touchSensitivity : 10,
-			anchors : ['instagramSection', 'showsSection', 'contactSection'],
-			menu : $('#menu'),
-			onLeave : function(index, nextIndex, direction){
-				if(direction == 'down' && nextIndex == 1){
-					$('.fp-scrollable').slimScroll({ scrollTo: '0px' });	
-				}
-				if(direction == 'up' && nextIndex == 1){
-					$('.fp-scrollable').slimScroll({ scrollTo: $('.fp-scrollable')[0].scrollHeight });	
-				}
-			},
-		});		
-		if( $('.menu-item').hasClass('active') ){
-			$('.fp-scrollable').slimScroll({ scrollTo: '0px' });
-		}
-		$(window).on('load', function(){
-			$('.grid').masonry({
-			  itemSelector: '.grid-item',
-			  columnWidth: 360,
-			  fitWidth: true,
-			});
-		});
+		
 
 		var app = {
 			menu : {
@@ -151,6 +126,35 @@
 			_init : function(){
 				app.instagramSection._init();
 				app.menu._init();
+
+
+				$('#fullpage').fullpage({
+					scrollOverflow : true,
+					continuousVertical : true,
+					easingcss3 : 'ease-in-out',
+					touchSensitivity : 10,
+					anchors : ['instagramSection', 'showsSection', 'contactSection'],
+					menu : $('#menu'),
+					responsiveWidth : 1025,
+					onLeave : function(index, nextIndex, direction){
+						if(direction == 'down' && nextIndex == 1){
+							$('.fp-scrollable').slimScroll({ scrollTo: '0px' });	
+						}
+						if(direction == 'up' && nextIndex == 1){
+							$('.fp-scrollable').slimScroll({ scrollTo: $('.fp-scrollable')[0].scrollHeight });	
+						}
+					},
+				});		
+				if( $('.menu-item').hasClass('active') ){
+					$('.fp-scrollable').slimScroll({ scrollTo: '0px' });
+				}
+				$(window).on('load', function(){
+					$('.grid').masonry({
+					  itemSelector: '.grid-item',
+					  columnWidth: 360,
+					  fitWidth: true,
+					});
+				});
 			},
 		}
 		app._init();
