@@ -9,10 +9,16 @@
 		box-sizing: border-box;
 		background-color: rgba(95,66,109,0.85);
 	}
+	.asideWrapper{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%,-50%));
+	}
 	.menuToggleContainer{
 		position: fixed;
 		z-index: 3;
-		@include font-size(24);
+		@include font-size(34);
 		right: 10px;
 		cursor: pointer;
 	}
@@ -46,6 +52,12 @@
 		color: white;
 		@include font-size(24);
 	}
+	.socialContainer{
+		display: none;
+	}
+	.socialContainer--mobile{
+		display: block;
+	}
 }
 
 @media only screen and (min-width: $medium){
@@ -63,6 +75,12 @@
 		position: relative;
 		padding: 0;
 	}	
+	.asideWrapper{
+		position: relative;
+		top: 0;
+		left: 0;
+		@include transform(translate(0%,0%));
+	}
 	.menuToggleContainer{
 		display: none;
 	}
@@ -120,10 +138,14 @@
 		opacity: 1;
 	}
 	.socialContainer{
+		display: block;
 		position: absolute;
 		bottom: 40px;
 		left: 50%;
 		@include transform(translate(-50%, 0));
+	}
+	.socialContainer--mobile{
+		display: none;
 	}
 	.social-item{
 		display: inline-block;

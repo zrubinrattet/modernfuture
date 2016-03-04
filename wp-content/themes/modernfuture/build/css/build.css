@@ -58,11 +58,21 @@ footer, header, hgroup, menu, nav, section {
     box-sizing: border-box;
     background-color: rgba(95, 66, 109, 0.85); }
 
+  .asideWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+
   .menuToggleContainer {
     position: fixed;
     z-index: 3;
-    font-size: 24px;
-    font-size: 2.4rem;
+    font-size: 34px;
+    font-size: 3.4rem;
     right: 10px;
     cursor: pointer; }
 
@@ -96,7 +106,13 @@ footer, header, hgroup, menu, nav, section {
   .social-item-link {
     color: white;
     font-size: 24px;
-    font-size: 2.4rem; } }
+    font-size: 2.4rem; }
+
+  .socialContainer {
+    display: none; }
+
+  .socialContainer--mobile {
+    display: block; } }
 @media only screen and (min-width: 1025px) {
   .aside {
     display: block;
@@ -107,6 +123,16 @@ footer, header, hgroup, menu, nav, section {
     box-sizing: border-box;
     position: relative;
     padding: 0; }
+
+  .asideWrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    -moz-transform: translate(0%, 0%);
+    -o-transform: translate(0%, 0%);
+    -ms-transform: translate(0%, 0%);
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%); }
 
   .menuToggleContainer {
     display: none; }
@@ -173,6 +199,7 @@ footer, header, hgroup, menu, nav, section {
     opacity: 1; }
 
   .socialContainer {
+    display: block;
     position: absolute;
     bottom: 40px;
     left: 50%;
@@ -181,6 +208,9 @@ footer, header, hgroup, menu, nav, section {
     -ms-transform: translate(-50%, 0);
     -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0); }
+
+  .socialContainer--mobile {
+    display: none; }
 
   .social-item {
     display: inline-block;
@@ -328,6 +358,9 @@ footer, header, hgroup, menu, nav, section {
     -moz-justify-content: center;
     justify-content: center; }
 
+  .contactSection-comingSoonContainer {
+    width: 100%; }
+
   .wpcf7-form-control.wpcf7-submit {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -342,7 +375,53 @@ footer, header, hgroup, menu, nav, section {
     margin-top: 5px;
     cursor: pointer; }
 
-  .wpcf7-form input, .wpcf7-form textarea, .wpcf7-form select {
+  .wpcf7-form {
+    padding: 0 20px; }
+    .wpcf7-form input, .wpcf7-form textarea, .wpcf7-form select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: 1px solid grey;
+      background-color: rgba(255, 255, 255, 0.1);
+      outline: none;
+      color: white;
+      border-radius: 0px;
+      -webkit-border-radius: 0px;
+      padding: 5px;
+      margin-bottom: 10px;
+      margin-top: 5px;
+      box-sizing: border-box;
+      width: 100%;
+      font-size: 18px;
+      font-size: 1.8rem; }
+    .wpcf7-form select {
+      padding: 5px 25px 5px 5px; }
+
+  .wpcf7-form-control-wrap.checkbox-833:after {
+    font-family: 'FontAwesome';
+    content: '\f107';
+    position: absolute;
+    right: 20px;
+    top: 3px; }
+
+  .wdform_page {
+    text-align: center; }
+
+  form.contactform2 .wdform-required {
+    color: #5f426d; }
+  form.contactform2 .wdform-label {
+    font-family: 'OpenSans', sans-serif;
+    color: white; }
+  form.contactform2 .button-submit {
+    margin: 0;
+    background-color: #5f426d;
+    color: white;
+    font-family: 'Futura', sans-serif;
+    text-transform: uppercase;
+    padding-top: 3px; }
+  form.contactform2 input, form.contactform2 input[type="text"] {
+    height: 25px; }
+  form.contactform2 input, form.contactform2 textarea, form.contactform2 select, form.contactform2 input[type="text"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -354,10 +433,34 @@ footer, header, hgroup, menu, nav, section {
     -webkit-border-radius: 0px;
     padding: 5px;
     margin-bottom: 10px;
-    margin-top: 5px; }
-  .wpcf7-form select {
-    padding: 5px 25px 5px 5px; }
-  .wpcf7-form .wpcf7-form-control-wrap.checkbox-833:after {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 14px;
+    font-size: 1.4rem; }
+  form.contactform2 textarea[id="wdform_23_element2"] {
+    color: white;
+    font-family: 'OpenSans', sans-serif;
+    font-size: 14px;
+    font-size: 1.4rem; }
+  form.contactform2 select {
+    padding: 0px 5px;
+    box-sizing: inherit; }
+  form.contactform2 .wdform-element-section.wdform_select:after {
+    font-family: 'FontAwesome';
+    content: '\f107';
+    position: relative;
+    left: calc(100% - 10px);
+    top: -31px; } }
+@media only screen and (min-width: 1025px) {
+  .wpcf7-form {
+    width: 300px;
+    margin: auto; }
+    .wpcf7-form input, .wpcf7-form textarea, .wpcf7-form select {
+      width: auto;
+      font-size: 12px;
+      font-size: 1.2rem; }
+
+  .wpcf7-form-control-wrap.checkbox-833:after {
     font-family: 'FontAwesome';
     content: '\f107';
     position: relative;

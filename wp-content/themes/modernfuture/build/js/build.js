@@ -123,10 +123,30 @@
 					}
 				},
 			},
+			_resizeHandler : $(window).on('resize load', function(){
+				// if mobile
+				if($(window).width() < 1025){
+					$.fn.fullpage.setAllowScrolling(false);
+					setTimeout(function(){
+						$('.instagramSectionContainer, .instagramSectionContainer .fp-section, .instagramSectionContainer .fp-tableCell, .instagramSectionContainer .fp-scrollable, .instagramSectionContainer .fp-tableCell, .instagramSectionContainer .slimScrollDiv').css('height', '');
+						$('.instagramSectionContainer .fp-section, .instagramSectionContainer .fp-slide, .instagramSectionContainer .fp-tableCell').css('height', 'auto !important');
+					}, 500);
+					
+				}
+				// if desktop
+				else{
+					$.fn.fullpage.setAllowScrolling(true);
+				}
+			}),
 			_init : function(){
 				app.instagramSection._init();
 				app.menu._init();
-
+				$(window).on('load', function(){
+					if(location.hash.indexOf('wpcf7') != -1){
+						console.log('contact thing');
+						$.fn.fullpage.moveTo(1);
+					}
+				});
 
 				$('#fullpage').fullpage({
 					scrollOverflow : true,
