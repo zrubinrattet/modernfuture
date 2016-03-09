@@ -60,6 +60,35 @@ function localize_theme_directory(){
 	wp_localize_script( 'theme', 'SiteParameters', $site_parameters );
 }
 
-require('classes/instagram.php')
+// require classes
+require('classes/instagram.php');
+require('classes/youtubevideo.php');
+
+function init_handler(){
+	// add Video CPT
+	register_post_type('mf_videos', array(
+		'labels' => array(
+			'name' => 'Videos',
+			'singular_name' => 'Video',
+			'menu_name' => 'Videos',
+			'add_new' => 'Add Video',
+			'add_new_item' => 'Add New Video',
+			'edit_item' => 'Edit Video',
+			'new_item' => 'New Video',
+			'view_item' => 'View Video',
+			'search_items' => 'Search Videos',
+		),
+		'menu_icon' => 'dashicons-video-alt3',
+		'public' => true,
+		'rewrite' => array(
+			'slug' => 'videos',
+		),
+		'menu_position' => 5,
+		'supports' => array('title'),
+	));
+}
+
+
+add_action('init', 'init_handler');
 
 ?>

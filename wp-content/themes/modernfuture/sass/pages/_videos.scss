@@ -1,0 +1,27 @@
+@media only screen {
+	.videosSection{
+		max-width: 1080px;
+		margin: auto;
+	}
+	.videoContainer{
+		width: 100%;
+		float: left;
+	}
+	.video{
+		width: 100%;
+		min-height: 320px;
+		padding: 0 30px;
+		box-sizing: border-box;
+	}
+}
+
+@media only screen and (min-width: $medium){
+
+}
+
+@media only screen and (min-width: $large){
+	.videoContainer{
+		width: 50%;
+		float: left;
+	}
+}

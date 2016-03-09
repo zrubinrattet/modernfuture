@@ -141,27 +141,27 @@
 			_init : function(){
 				app.instagramSection._init();
 				app.menu._init();
-				$(window).on('load', function(){
-					if(location.hash.indexOf('wpcf7') != -1){
-						console.log('contact thing');
-						$.fn.fullpage.moveTo(1);
-					}
-				});
 
 				$('#fullpage').fullpage({
 					scrollOverflow : true,
 					continuousVertical : true,
 					easingcss3 : 'ease-in-out',
 					touchSensitivity : 10,
-					anchors : ['instagramSection', 'showsSection', 'contactSection'],
+					anchors : ['instagramSection', 'videosSection', 'contactSection'],
 					menu : $('#menu'),
 					responsiveWidth : 1025,
 					onLeave : function(index, nextIndex, direction){
 						if(direction == 'down' && nextIndex == 1){
-							$('.fp-scrollable').slimScroll({ scrollTo: '0px' });	
+							$('.instagramSectionContainer .fp-scrollable').slimScroll({ scrollTo: '0px' });	
 						}
 						if(direction == 'up' && nextIndex == 1){
-							$('.fp-scrollable').slimScroll({ scrollTo: $('.fp-scrollable')[0].scrollHeight });	
+							$('.instagramSectionContainer .fp-scrollable').slimScroll({ scrollTo: $('.instagramSectionContainer .fp-scrollable')[0].scrollHeight });	
+						}
+						if(direction == 'down' && nextIndex == 2){
+							$('.videosSectionContainer .fp-scrollable').slimScroll({ scrollTo: '0px' });	
+						}
+						if(direction == 'up' && nextIndex == 2){
+							$('.videosSectionContainer .fp-scrollable').slimScroll({ scrollTo: $('.videosSectionContainer .fp-scrollable')[0].scrollHeight });	
 						}
 					},
 				});		
