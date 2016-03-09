@@ -64,9 +64,15 @@
 		.wdform_column{
 			float: none;
 		}
+		.wdform_column.ui-sortable{
+			padding-right: 10px !important;
+		}
 		.wdform-label{
 			font-family: 'OpenSans', sans-serif;
 			color: white;
+		}
+		.wdform_row.ui-sortable-handle[wdid="24"]{
+			height: 56px;
 		}
 		.button-submit{
 			margin: 0;

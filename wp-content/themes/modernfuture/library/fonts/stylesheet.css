@@ -9,3 +9,12 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'Futura';
+	src: url('FuturaStd-Heavy.eot');
+	src: url('FuturaStd-Heavy.eot?#iefix') format('embedded-opentype'),
+		url('FuturaStd-Heavy.woff') format('woff'),
+		url('FuturaStd-Heavy.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}

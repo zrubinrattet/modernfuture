@@ -157,12 +157,12 @@
 						if(direction == 'up' && nextIndex == 1){
 							$('.instagramSectionContainer .fp-scrollable').slimScroll({ scrollTo: $('.instagramSectionContainer .fp-scrollable')[0].scrollHeight });	
 						}
-						if(direction == 'down' && nextIndex == 2){
-							$('.videosSectionContainer .fp-scrollable').slimScroll({ scrollTo: '0px' });	
-						}
-						if(direction == 'up' && nextIndex == 2){
-							$('.videosSectionContainer .fp-scrollable').slimScroll({ scrollTo: $('.videosSectionContainer .fp-scrollable')[0].scrollHeight });	
-						}
+						// if(direction == 'down' && nextIndex == 2){
+						// 	$('.videosSectionContainer .fp-scrollable').slimScroll({ scrollTo: '0px' });	
+						// }
+						// if(direction == 'up' && nextIndex == 2){
+						// 	$('.videosSectionContainer .fp-scrollable').slimScroll({ scrollTo: $('.videosSectionContainer .fp-scrollable')[0].scrollHeight });	
+						// }
 					},
 				});		
 				if( $('.menu-item').hasClass('active') ){

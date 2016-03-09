@@ -2,16 +2,39 @@
 	.videosSection{
 		max-width: 1080px;
 		margin: auto;
+		@include flexbox();
+		@include align-items(center);
+		@include justify-content(center);
 	}
 	.videoContainer{
 		width: 100%;
-		float: left;
 	}
 	.video{
-		width: 100%;
-		min-height: 320px;
+		width: 300px;
 		padding: 0 30px;
-		box-sizing: border-box;
+		display: inline-block;
+		position: relative;
+	}
+	.video-title{
+		font-family: 'Futura', sans-serif;
+		text-transform: uppercase;
+		font-weight: normal;
+	}
+	.video-link{
+		display: block;
+		color: white;
+		text-decoration: none;
+	}
+	.video-link-img{
+		width: 100%;
+		height: auto;
+	}
+	.video-link-icon{
+		position: absolute;
+		top: 54%;
+		left: 50%;
+		@include transform(translate(-50%,-50%));
+		@include font-size(64);
 	}
 }
 
@@ -23,5 +46,11 @@
 	.videoContainer{
 		width: 50%;
 		float: left;
+	}
+	.video-link-img{
+		@include transition(box-shadow 0.25s ease);
+		&:hover{
+			box-shadow: 0px 0px 25px #fff;
+		}
 	}
 }
