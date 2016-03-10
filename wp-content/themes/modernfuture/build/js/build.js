@@ -135,6 +135,16 @@
 					$.fn.fullpage.setAllowScrolling(true);
 				}
 			}),
+			_orientationchangeHandler : $(window).on('orientationchange', function(){
+				if(window.orientation != 0){
+					$('.landscape').show();
+					$('#fullpage').hide();
+				}
+				else{
+					$('.landscape').hide();
+					$('#fullpage').show();
+				}
+			}),
 			_init : function(){
 				app.instagramSection._init();
 				app.menu._init();

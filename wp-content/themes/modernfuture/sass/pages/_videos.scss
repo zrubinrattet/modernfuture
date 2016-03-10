@@ -40,7 +40,9 @@
 }
 
 @media only screen and (min-width: $medium){
-
+	.video{
+		max-width: 320px;
+	}
 }
 
 @media only screen and (min-width: $large){
@@ -50,6 +52,7 @@
 	}
 	.video{
 		padding: 0 30px;
+		max-width: 320px;
 	}
 	.video-link-img{
 		@include transition(box-shadow 0.25s ease);

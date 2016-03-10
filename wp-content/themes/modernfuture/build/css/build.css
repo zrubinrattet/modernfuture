@@ -44,7 +44,7 @@ footer, header, hgroup, menu, nav, section {
   background-color: black;
   width: 100vw;
   height: 100vh;
-  position: static;
+  position: fixed;
   z-index: 9999;
   top: 0;
   display: none; }
@@ -61,9 +61,6 @@ footer, header, hgroup, menu, nav, section {
   transform: translate(-50%, -50%);
   text-transform: uppercase; }
 
-@media only screen and (orientation: landscape) {
-  .landscape {
-    display: block; } }
 @media only screen {
   #fullpage {
     width: 100%; } }
@@ -413,13 +410,17 @@ footer, header, hgroup, menu, nav, section {
     transform: translate(-50%, -50%);
     font-size: 64px;
     font-size: 6.4rem; } }
+@media only screen and (min-width: 641px) {
+  .video {
+    max-width: 320px; } }
 @media only screen and (min-width: 1025px) {
   .videoContainer {
     width: 50%;
     float: left; }
 
   .video {
-    padding: 0 30px; }
+    padding: 0 30px;
+    max-width: 320px; }
 
   .video-link-img {
     -webkit-transition: box-shadow 0.25s ease;

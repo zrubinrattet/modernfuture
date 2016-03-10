@@ -50,7 +50,7 @@ footer, header, hgroup, menu, nav, section {
 	background-color: black;
 	width: 100vw;
 	height: 100vh;
-	position: static;
+	position: fixed;
 	z-index: 9999;
 	top: 0;
 	display: none;
@@ -61,11 +61,11 @@ footer, header, hgroup, menu, nav, section {
 	text-transform: uppercase;
 }
 
-@media only screen and (orientation: landscape){
-	.landscape{
-		display: block;
-	}
-}
+// @media screen and (orientation: landscape) and (max-width: 1025px){
+// 	.landscape{
+// 		display: block;
+// 	}
+// }
 
 
 
