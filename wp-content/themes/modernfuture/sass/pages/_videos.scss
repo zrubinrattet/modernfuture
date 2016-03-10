@@ -10,8 +10,9 @@
 		width: 100%;
 	}
 	.video{
-		width: 300px;
-		padding: 0 30px;
+		width: 100%;
+		min-width: 320px;
+		padding: 0 10px;
 		display: inline-block;
 		position: relative;
 	}
@@ -46,6 +47,9 @@
 	.videoContainer{
 		width: 50%;
 		float: left;
+	}
+	.video{
+		padding: 0 30px;
 	}
 	.video-link-img{
 		@include transition(box-shadow 0.25s ease);

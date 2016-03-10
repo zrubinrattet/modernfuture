@@ -46,6 +46,26 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
+.landscape{
+	background-color: black;
+	width: 100vw;
+	height: 100vh;
+	position: static;
+	z-index: 9999;
+	top: 0;
+	display: none;
+}
+.landscape-text{
+	color: white;
+	@include centerer;
+	text-transform: uppercase;
+}
+
+@media only screen and (orientation: landscape){
+	.landscape{
+		display: block;
+	}
+}
 
 
 

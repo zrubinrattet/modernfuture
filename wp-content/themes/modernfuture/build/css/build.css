@@ -40,6 +40,30 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
+.landscape {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  position: static;
+  z-index: 9999;
+  top: 0;
+  display: none; }
+
+.landscape-text {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-transform: uppercase; }
+
+@media only screen and (orientation: landscape) {
+  .landscape {
+    display: block; } }
 @media only screen {
   #fullpage {
     width: 100%; } }
@@ -358,8 +382,9 @@ footer, header, hgroup, menu, nav, section {
     width: 100%; }
 
   .video {
-    width: 300px;
-    padding: 0 30px;
+    width: 100%;
+    min-width: 320px;
+    padding: 0 10px;
     display: inline-block;
     position: relative; }
 
@@ -393,6 +418,9 @@ footer, header, hgroup, menu, nav, section {
     width: 50%;
     float: left; }
 
+  .video {
+    padding: 0 30px; }
+
   .video-link-img {
     -webkit-transition: box-shadow 0.25s ease;
     -moz-transition: box-shadow 0.25s ease;
@@ -419,6 +447,15 @@ footer, header, hgroup, menu, nav, section {
     -moz-justify-content: center;
     justify-content: center; }
 
+  .warning {
+    text-align: center; }
+    .warning h2 {
+      font-family: 'Futura', sans-serif;
+      font-weight: normal;
+      text-transform: uppercase; }
+    .warning p {
+      font-family: 'OpenSans', sans-serif; }
+
   .contactSection-comingSoonContainer {
     width: 100%; }
 
@@ -434,7 +471,8 @@ footer, header, hgroup, menu, nav, section {
     font-size: 14px;
     padding: 10px 20px;
     margin-top: 5px;
-    cursor: pointer; }
+    cursor: pointer;
+    outline: 0; }
 
   .wpcf7-form {
     padding: 0 20px; }
@@ -517,7 +555,9 @@ footer, header, hgroup, menu, nav, section {
     content: '\f107';
     position: relative;
     left: calc(100% - 10px);
-    top: -31px; } }
+    top: -31px; }
+  form.contactform2 button {
+    outline: 0; } }
 @media only screen and (min-width: 1025px) {
   .wpcf7-form {
     width: 300px;

@@ -4,6 +4,17 @@
 		@include align-items(center);
 		@include justify-content(center);
 	}	
+	.warning{
+		text-align: center;
+		h2{
+			font-family: 'Futura', sans-serif;
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+		p{
+			font-family: 'OpenSans', sans-serif;
+		}
+	}
 	.contactSection-comingSoonContainer{
 		width: 100%;
 	}
@@ -20,6 +31,7 @@
 		padding: 10px 20px;
 		margin-top: 5px;
 		cursor: pointer;
+		outline: 0;
 	}
 	.wpcf7-form{
 		padding: 0 20px;
@@ -118,6 +130,9 @@
 				left: calc(100% - 10px);
 				top: -31px;
 			}
+		}
+		button{
+			outline: 0;
 		}
 	}
 }

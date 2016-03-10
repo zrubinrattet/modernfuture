@@ -13,27 +13,5 @@
 			endwhile;
 		endif;
 	?>
-		<!-- <div class="videoContainer">
-			<iframe class="video" src="//www.youtube.com/embed/U8pXf9idEQY" frameborder="0" allowfullscreen></iframe>
-		</div>
-		<div class="videoContainer">
-			<iframe class="video" src="//www.youtube.com/embed/U8pXf9idEQY" frameborder="0" allowfullscreen></iframe>
-		</div>
-		<div class="videoContainer">
-			<iframe class="video" src="//www.youtube.com/embed/U8pXf9idEQY" frameborder="0" allowfullscreen></iframe>
-		</div>
-		<div class="videoContainer">
-			<iframe class="video" src="//www.youtube.com/embed/U8pXf9idEQY" frameborder="0" allowfullscreen></iframe>
-		</div>
-		<div class="videoContainer">
-			<iframe class="video" src="//www.youtube.com/embed/U8pXf9idEQY" frameborder="0" allowfullscreen></iframe>
-		</div>
-		<div class="videoContainer">
-			<iframe class="video" src="//www.youtube.com/embed/U8pXf9idEQY" frameborder="0" allowfullscreen></iframe>
-		</div>
-		<div class="videoContainer">
-			<iframe class="video" src="//www.youtube.com/embed/U8pXf9idEQY" frameborder="0" allowfullscreen></iframe>
-		</div> -->
-
 	</div>
 </section>

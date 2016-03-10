@@ -3,9 +3,6 @@
         return this.slice(0, start) + newSubStr + this.slice(start + Math.abs(delCount));
     };
 	$(document).ready(function(){
-
-		
-
 		var app = {
 			menu : {
 				toggleContainer : $('.menuToggleContainer'),
