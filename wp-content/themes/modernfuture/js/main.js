@@ -171,6 +171,12 @@
 						// 	$('.videosSectionContainer .fp-scrollable').slimScroll({ scrollTo: $('.videosSectionContainer .fp-scrollable')[0].scrollHeight });	
 						// }
 					},
+					afterRender : function(){
+						$('.slimScrollBar').css({
+							'background' : 'rgb(255,255,255)',
+							'opacity' : '0.2',
+						});
+					},
 				});		
 				if( $('.menu-item').hasClass('active') ){
 					$('.fp-scrollable').slimScroll({ scrollTo: '0px' });

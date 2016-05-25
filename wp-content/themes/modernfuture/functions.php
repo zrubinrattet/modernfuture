@@ -38,7 +38,7 @@ function enqueue_styles(){
 function register_javascript(){
 	$js_dir = get_template_directory_uri() . '/build/js';
 	wp_register_script( 'theme', $js_dir . '/build.js', array('jquery', 'masonry'));
-	wp_register_script( 'slimscroll', '//cdn.rawgit.com/alvarotrigo/fullPage.js/master/vendors/jquery.slimscroll.min.js', array('jquery'));
+	wp_register_script( 'slimscroll', $js_dir . '/jquery.slimscroll.min.js', array('jquery'));
 	wp_register_script( 'fullpage', '//cdn.rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.min.js', array('jquery'));
 	wp_register_script( 'moment', '//cdn.rawgit.com/moment/moment/develop/min/moment.min.js');
 	wp_register_script( 'fancyboxjs', '//cdn.rawgit.com/fancyapps/fancyBox/master/source/jquery.fancybox.js', array('jquery'));
