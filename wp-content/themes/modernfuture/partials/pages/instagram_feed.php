@@ -1,5 +1,5 @@
 <?php
-$Instagram = new Instagram('1007723618.ab103e5.00083918867e49d08e14bcd1076054df');
+$Instagram = new Instagram('1007723618.1677ed0.e07d19b1bd4046cfafb721c0ffe5f1ab');
 // var_dump($Instagram::$result['data']);
 ?>
 <section class="instagramSectionContainer section" data-anchor="instagramSection">	
