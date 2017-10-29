@@ -41,7 +41,7 @@ function register_javascript(){
 	wp_register_script( 'slimscroll', $js_dir . '/jquery.slimscroll.min.js', array('jquery'));
 	wp_register_script( 'fullpage', $js_dir . '/jquery.fullPage.min.js', array('jquery'));
 	wp_register_script( 'moment', '//cdn.rawgit.com/moment/moment/develop/min/moment.min.js');
-	wp_register_script( 'fancyboxjs', '//cdn.rawgit.com/fancyapps/fancyBox/master/source/jquery.fancybox.js', array('jquery'));
+	wp_register_script( 'fancyboxjs', '//rawgit.com/fancyapps/fancybox/master/dist/jquery.fancybox.js', array('jquery'));
 }
 
 function register_styles(){
@@ -49,7 +49,7 @@ function register_styles(){
 	wp_register_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 	wp_register_style( 'theme', $styles_dir . '/build.css' );
 	wp_register_style( 'fullpage', 'https://cdn.rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.css');
-	wp_register_style( 'fancyboxcss', '//cdn.rawgit.com/fancyapps/fancyBox/master/source/jquery.fancybox.css');
+	wp_register_style( 'fancyboxcss', '//cdn.rawgit.com/fancyapps/fancyBox/master/dist/jquery.fancybox.css');
 }
 
 // make theme directory available to javascript
@@ -63,6 +63,10 @@ function localize_theme_directory(){
 // require classes
 require('classes/instagram.php');
 require('classes/youtubevideo.php');
+require('classes/acf.php');
+
+
+// build theme
 
 function init_handler(){
 	// add Video CPT
@@ -91,4 +95,20 @@ function init_handler(){
 
 add_action('init', 'init_handler');
 
+
+function remove_epk_page_supports() {
+
+	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+	if( !isset( $post_id ) ) return;
+
+	$homepgname = get_the_title($post_id);
+	if($homepgname == 'EPK'){ 
+		remove_post_type_support('page', 'editor');
+		remove_post_type_support('page', 'page-attributes');
+		remove_post_type_support('page', 'thumbnail');
+	}
+
+}
+
+add_action( 'admin_init', 'remove_epk_page_supports' );
 ?>

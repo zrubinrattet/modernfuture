@@ -2,9 +2,6 @@
 	.videosSection{
 		max-width: 1080px;
 		margin: auto;
-		@include flexbox();
-		@include align-items(center);
-		@include justify-content(center);
 	}
 	.videoContainer{
 		width: 100%;
@@ -13,8 +10,12 @@
 		width: 100%;
 		min-width: 320px;
 		padding: 0 10px;
+		box-sizing: border-box;
 		display: inline-block;
 		position: relative;
+		&:not(:first-child){
+			margin-top: 20px;
+		}
 	}
 	.video-title{
 		font-family: 'Futura', sans-serif;
@@ -40,19 +41,25 @@
 }
 
 @media only screen and (min-width: $medium){
+	.videosSection{
+		text-align: center;
+	}
 	.video{
 		max-width: 320px;
 	}
 }
 
 @media only screen and (min-width: $large){
+	.videosSection{
+		max-width: 1080px;
+	}
 	.videoContainer{
 		width: 50%;
 		float: left;
 	}
 	.video{
 		padding: 0 30px;
-		max-width: 320px;
+		max-width: 360px;
 	}
 	.video-link-img{
 		@include transition(box-shadow 0.25s ease);

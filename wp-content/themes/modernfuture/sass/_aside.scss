@@ -58,6 +58,15 @@
 	.socialContainer--mobile{
 		display: block;
 	}
+	.epk{
+		position: absolute;
+	    bottom: 20px;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    color: white;
+	    text-decoration: none;
+	    font-size: 2rem;
+	}
 }
 
 @media only screen and (min-width: $medium){
@@ -140,9 +149,10 @@
 	.socialContainer{
 		display: block;
 		position: absolute;
-		bottom: 40px;
+		bottom: 60px;
 		left: 50%;
 		@include transform(translate(-50%, 0));
+		width: 100%;
 	}
 	.socialContainer--mobile{
 		display: none;
@@ -155,5 +165,8 @@
 		color: white;
 		@include font-size(30);
 		padding: 0 10px;
+	}
+	.epk{
+
 	}
 }

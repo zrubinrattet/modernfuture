@@ -133,7 +133,16 @@ footer, header, hgroup, menu, nav, section {
     display: none; }
 
   .socialContainer--mobile {
-    display: block; } }
+    display: block; }
+
+  .epk {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-decoration: none;
+    font-size: 2rem; } }
 @media only screen and (min-width: 1025px) {
   .aside {
     display: block;
@@ -222,13 +231,14 @@ footer, header, hgroup, menu, nav, section {
   .socialContainer {
     display: block;
     position: absolute;
-    bottom: 40px;
+    bottom: 60px;
     left: 50%;
     -moz-transform: translate(-50%, 0);
     -o-transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);
     -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0); }
+    transform: translate(-50%, 0);
+    width: 100%; }
 
   .socialContainer--mobile {
     display: none; }
@@ -358,22 +368,7 @@ footer, header, hgroup, menu, nav, section {
 @media only screen {
   .videosSection {
     max-width: 1080px;
-    margin: auto;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    justify-content: center; }
+    margin: auto; }
 
   .videoContainer {
     width: 100%; }
@@ -382,8 +377,11 @@ footer, header, hgroup, menu, nav, section {
     width: 100%;
     min-width: 320px;
     padding: 0 10px;
+    box-sizing: border-box;
     display: inline-block;
     position: relative; }
+    .video:not(:first-child) {
+      margin-top: 20px; }
 
   .video-title {
     font-family: 'Futura', sans-serif;
@@ -411,16 +409,22 @@ footer, header, hgroup, menu, nav, section {
     font-size: 64px;
     font-size: 6.4rem; } }
 @media only screen and (min-width: 641px) {
+  .videosSection {
+    text-align: center; }
+
   .video {
     max-width: 320px; } }
 @media only screen and (min-width: 1025px) {
+  .videosSection {
+    max-width: 1080px; }
+
   .videoContainer {
     width: 50%;
     float: left; }
 
   .video {
     padding: 0 30px;
-    max-width: 320px; }
+    max-width: 360px; }
 
   .video-link-img {
     -webkit-transition: box-shadow 0.25s ease;
