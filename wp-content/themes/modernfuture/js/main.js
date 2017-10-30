@@ -156,9 +156,12 @@
 					));
 				},
 				_map : function(n,i,o,r,t){return i>o?i>n?(n-i)*(t-r)/(o-i)+r:r:o>i?o>n?(n-i)*(t-r)/(o-i)+r:t:void 0;},
-				_setupMasonry : function(el, index){	
-					new Masonry(document.querySelector(el.grid), {
-						itemSelector : el.gridItem,
+				_setupMasonry : function(el, index){
+					var grids = document.querySelectorAll(el.grid);
+					grids.forEach(function(grid, index){
+						new Masonry(grid, {
+							itemSelector : el.gridItem,
+						});
 					});
 				},
 			},

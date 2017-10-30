@@ -64,9 +64,34 @@ function localize_theme_directory(){
 require('classes/instagram.php');
 require('classes/youtubevideo.php');
 require('classes/acf.php');
-
+require('classes/opengraph.php');
 
 // build theme
+function render_genlinks($slug, $title, $post){
+	if( have_rows($slug, $post->ID) ): ?>
+		<section class="epk-genlinks">
+			<h1 class="epk-genlinks-header fade fade-up"><?php echo $title ?></h1>
+			<div class="epk-genlinks-grid">
+				<?php while( have_rows($slug, $post->ID) ): the_row(); ?>
+					<div class="epk-genlinks-grid-item fade fade-up">
+						<?php 
+						if( !empty(get_sub_field('link')) ): 
+							$link = get_sub_field('link')['url'];
+							$graph = OpenGraph::fetch($link);
+							$image = !empty($graph->image) ? $graph->image : get_template_directory_uri() . '/library/img/logotext-white.png';
+						?>
+							<a target="_blank" href="<?php echo get_sub_field('link')['url'] ?>" class="epk-genlinks-grid-item-link" style="background-image: url('<?php echo $image ?>');">
+								<div class="epk-genlinks-grid-item-link-title">
+									<?php echo get_sub_field('link')['title'] ?>
+								</div>
+							</a>
+						<?php endif; ?>
+					</div>
+				<?php endwhile; ?>
+			</div>
+		</section>
+	<?php endif; 
+}
 
 function init_handler(){
 	// add Video CPT

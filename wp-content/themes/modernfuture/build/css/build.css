@@ -723,8 +723,9 @@ footer, header, hgroup, menu, nav, section {
 
   .epk-bio-content {
     line-height: 2;
-    max-width: 641px;
-    margin: 0 auto; }
+    max-width: 1025px;
+    margin: 0 auto;
+    padding: 0 40px; }
 
   .epk-bio-header {
     margin-bottom: 20px; }
@@ -888,18 +889,37 @@ footer, header, hgroup, menu, nav, section {
   .epk-photos-grid {
     max-width: 1025px;
     margin: 0 auto;
-    padding: 80px 20px;
+    padding: 80px 20px 20px 20px;
     box-sizing: border-box; }
 
   .epk-photos-grid-photo {
-    min-height: 170px;
+    min-height: 192px;
     width: 100%;
     box-sizing: border-box;
     display: block;
     margin-bottom: 20px;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover; }
+    background-size: cover;
+    position: relative; }
+
+  .epk-photos-grid-photo-tint {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7); }
+
+  .epk-photos-logos {
+    display: inline-block;
+    color: white;
+    background-color: #5f426d;
+    padding: 10px 20px;
+    margin-bottom: 80px;
+    text-decoration: none;
+    text-transform: uppercase; }
 
   .epk-contactinfo {
     background-color: black;
@@ -952,10 +972,14 @@ footer, header, hgroup, menu, nav, section {
     display: inline-block;
     margin: 20px; } }
 @media only screen and (min-width: 1025px) {
+  .epk-photos-grid-photo:hover .epk-photos-grid-photo-tint,
+  .epk-photos-grid-photo:hover .epk-genlinks-grid-item-link-title,
+  .epk-genlinks-grid-item:hover .epk-photos-grid-photo-tint,
   .epk-genlinks-grid-item:hover .epk-genlinks-grid-item-link-title {
     background-color: rgba(0, 0, 0, 0.4); }
 
-  .epk-genlinks-grid-item-link-title {
+  .epk-genlinks-grid-item-link-title,
+  .epk-photos-grid-photo-tint {
     -webkit-transition: background-color 0.25s ease;
     -moz-transition: background-color 0.25s ease;
     -ms-transition: background-color 0.25s ease;

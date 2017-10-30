@@ -190,6 +190,12 @@
 						'name' => 'epk-photos',
 					),
 					array(
+						'key' => 'field_cvioznahfda',
+						'label' => 'Logos Zip',
+						'type' => 'file',
+						'name' => 'epk-logos',
+					),
+					array(
 						'key' => 'field_09czvhoidsaf',
 						'label' => 'Contact Info',
 						'type' => 'wysiwyg',

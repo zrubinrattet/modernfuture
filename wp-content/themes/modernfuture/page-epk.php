@@ -1,34 +1,4 @@
-<?php 
-get_header(); 
-@include 'classes/opengraph.php';
-
-function render_genlinks($slug, $title, $post){
-	if( have_rows($slug, $post->ID) ): ?>
-		<section class="epk-genlinks">
-			<h1 class="epk-genlinks-header fade fade-up"><?php echo $title ?></h1>
-			<div class="epk-genlinks-grid">
-				<?php while( have_rows($slug, $post->ID) ): the_row(); ?>
-					<div class="epk-genlinks-grid-item fade fade-up">
-						<?php 
-						if( !empty(get_sub_field('link')) ): 
-							$link = get_sub_field('link')['url'];
-							$graph = OpenGraph::fetch($link);
-							$image = !empty($graph->image) ? $graph->image : get_template_directory_uri() . '/library/img/logotext-white.png';
-						?>
-							<a target="_blank" href="<?php echo get_sub_field('link')['url'] ?>" class="epk-genlinks-grid-item-link" style="background-image: url('<?php echo $image ?>');">
-								<div class="epk-genlinks-grid-item-link-title">
-									<?php echo get_sub_field('link')['title'] ?>
-								</div>
-							</a>
-						<?php endif; ?>
-					</div>
-				<?php endwhile; ?>
-			</div>
-		</section>
-	<?php endif; 
-}
-?>
-	
+<?php get_header(); ?>
 	<div class="epk">
 		<section class="epk-hero">
 			<div class="epk-hero-content">
@@ -108,9 +78,14 @@ function render_genlinks($slug, $title, $post){
 				<h1 class="epk-photos-header fade fade-up">Photos</h1>
 				<div class="epk-photos-grid">
 					<?php foreach( get_field('epk-photos', $post->ID) as $image ): ?>
-						<a target="_blank" href="<?php echo $image['sizes']['large']; ?>" class="epk-photos-grid-photo fade fade-up" style="background-image: url('<?php echo $image['sizes']['medium']; ?>');"></a>
+						<a target="_blank" href="<?php echo $image['sizes']['large']; ?>" class="epk-photos-grid-photo fade fade-up" style="background-image: url('<?php echo $image['sizes']['medium']; ?>');">
+							<div class="epk-photos-grid-photo-tint"></div>
+						</a>
 					<?php endforeach; ?>
 				</div>
+				<?php if( !empty(get_field('epk-logos', $post->ID)) ): ?>
+					<a href="<?php echo get_field('epk-logos', $post->ID)['url']; ?>" class="epk-photos-logos fade fade-up">Get logos</a>
+				<?php endif; ?>
 			</section>
 		<?php endif; ?>
 		<?php if( !empty(get_field('epk-contactinfo', $post->ID)) ): ?>
@@ -120,5 +95,4 @@ function render_genlinks($slug, $title, $post){
 			</section>
 		<?php endif; ?>
 	</div>
-
 <?php get_footer(); ?>
