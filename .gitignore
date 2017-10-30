@@ -12,8 +12,8 @@ wp-config.php
 wp-content/themes/index.php
 wp-content/themes/*/node_modules/**
 !wp-content/themes/modernfuture/index.php
-wp-content/plugins/**
-wp-content/uploads/**
+!wp-content/plugins/**
+!wp-content/uploads/**
 wp-cron.php
 wp-includes/**
 wp-links-opml.php
