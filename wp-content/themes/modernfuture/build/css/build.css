@@ -249,8 +249,8 @@ footer, header, hgroup, menu, nav, section {
 
   .social-item-link {
     color: white;
-    font-size: 30px;
-    font-size: 3rem;
+    font-size: 24px;
+    font-size: 2.4rem;
     padding: 0 10px; } }
 @media only screen {
   .instagramSectionWrapper {
