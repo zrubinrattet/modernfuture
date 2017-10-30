@@ -108,7 +108,7 @@ function render_genlinks($slug, $title, $post){
 				<h1 class="epk-photos-header fade fade-up">Photos</h1>
 				<div class="epk-photos-grid">
 					<?php foreach( get_field('epk-photos', $post->ID) as $image ): ?>
-						<a href="<?php echo $image['sizes']['large']; ?>" class="epk-photos-grid-photo fade fade-up" style="background-image: url('<?php echo $image['sizes']['medium']; ?>');"></a>
+						<a target="_blank" href="<?php echo $image['sizes']['large']; ?>" class="epk-photos-grid-photo fade fade-up" style="background-image: url('<?php echo $image['sizes']['medium']; ?>');"></a>
 					<?php endforeach; ?>
 				</div>
 			</section>

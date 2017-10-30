@@ -127,15 +127,21 @@
 						gridItem : '.epk-pqprojects-grid-item-quotescontainer-quotes-quote'
 					},
 				],
-				content : $('.epk-hero-content'),
+				heroContent : $('.epk-hero-content'),
 				hero : $('.epk-hero'),
 				fadeEls : $('.fade'),
 				_init : function(){
 					app.epk.masonryData.forEach(app.epk._setupMasonry);
-					if( app.epk.content.length > 0 ){
+					if( app.epk.heroContent.length > 0 ){
 						$(window).on('scroll load', app.epk._fadeContent);
+						app.epk.heroContent.on('click', app.epk._heroContentClickHandler);
 					}
 					$(window).on('scroll resize load', app.epk._handleFades);
+				},
+				_heroContentClickHandler : function(){
+					$('html, body').animate({
+						scrollTop : $(window).height(),
+					}, 600);
 				},
 				_handleFades : function(){
 					for( var i = 0; i < app.epk.fadeEls.length; i++ ){
@@ -145,7 +151,7 @@
 					}
 				},
 				_fadeContent : function(){
-					app.epk.content.css('opacity', app.epk._map(
+					app.epk.heroContent.css('opacity', app.epk._map(
 						$(window).scrollTop(), 0, app.epk.hero.height() * 0.75, 1, 0
 					));
 				},
