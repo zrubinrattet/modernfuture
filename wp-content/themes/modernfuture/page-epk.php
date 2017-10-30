@@ -1,4 +1,33 @@
-<?php get_header(); ?>
+<?php 
+get_header(); 
+@include 'classes/opengraph.php';
+
+function render_genlinks($slug, $title, $post){
+	if( have_rows($slug, $post->ID) ): ?>
+		<section class="epk-genlinks">
+			<h1 class="epk-genlinks-header fade fade-up"><?php echo $title ?></h1>
+			<div class="epk-genlinks-grid">
+				<?php while( have_rows($slug, $post->ID) ): the_row(); ?>
+					<div class="epk-genlinks-grid-item fade fade-up">
+						<?php 
+						if( !empty(get_sub_field('link')) ): 
+							$link = get_sub_field('link')['url'];
+							$graph = OpenGraph::fetch($link);
+							$image = !empty($graph->image) ? $graph->image : get_template_directory_uri() . '/library/img/logotext-white.png';
+						?>
+							<a target="_blank" href="<?php echo get_sub_field('link')['url'] ?>" class="epk-genlinks-grid-item-link" style="background-image: url('<?php echo $image ?>');">
+								<div class="epk-genlinks-grid-item-link-title">
+									<?php echo get_sub_field('link')['title'] ?>
+								</div>
+							</a>
+						<?php endif; ?>
+					</div>
+				<?php endwhile; ?>
+			</div>
+		</section>
+	<?php endif; 
+}
+?>
 	
 	<div class="epk">
 		<section class="epk-hero">
@@ -55,48 +84,16 @@
 				</div>
 			</section>
 		<?php endif; ?>
-		<?php if( have_rows('epk-presslinks', $post->ID) ): ?>
-			<section class="epk-genlinks">
-				<h1 class="epk-genlinks-header">Press Links</h1>
-				<div class="epk-genlinks-grid">
-					<?php while( have_rows('epk-presslinks', $post->ID) ): the_row(); ?>
-						<div class="epk-genlinks-grid-item">
-							<?php if( !empty(get_sub_field('link')) ): ?>
-								<a target="_blank" href="<?php echo get_sub_field('link')['url'] ?>" class="epk-genlinks-grid-item-link">
-									<div class="epk-genlinks-grid-item-link-title">
-										<?php echo get_sub_field('link')['title'] ?>
-									</div>
-								</a>
-							<?php endif; ?>
-						</div>
-					<?php endwhile; ?>
-				</div>
-			</section>
-		<?php endif; ?>
-		<?php if( have_rows('epk-musiclinks', $post->ID) ): ?>
-			<section class="epk-genlinks">
-				<h1 class="epk-genlinks-header">Music Links</h1>
-				<div class="epk-genlinks-grid">
-					<?php while( have_rows('epk-musiclinks', $post->ID) ): the_row(); ?>
-						<div class="epk-genlinks-grid-item">
-							<?php if( !empty(get_sub_field('link')) ): ?>
-								<a target="_blank" href="<?php echo get_sub_field('link')['url'] ?>" class="epk-genlinks-grid-item-link">
-									<div class="epk-genlinks-grid-item-link-title">
-										<?php echo get_sub_field('link')['title'] ?>
-									</div>
-								</a>
-							<?php endif; ?>
-						</div>
-					<?php endwhile; ?>
-				</div>
-			</section>
-		<?php endif; ?>
+		<?php 
+			render_genlinks('epk-presslinks', 'Press Links', $post); 
+			render_genlinks('epk-musiclinks', 'Music Links', $post); 
+		?>
 		<?php if( have_rows('epk-videolinks', $post->ID) ): ?>
 			<section class="epk-videolinks">
-				<h1 class="epk-videolinks-header">Video Links</h1>
+				<h1 class="epk-videolinks-header fade fade-up">Video Links</h1>
 				<div class="epk-videolinks-grid">
 					<?php while( have_rows('epk-videolinks', $post->ID) ): the_row(); ?>
-						<div class="epk-videolinks-grid-item">
+						<div class="epk-videolinks-grid-item fade fade-up">
 							<?php if( !empty(get_sub_field('link')) ): ?>
 								<?php the_sub_field('link') ?>
 							<?php endif; ?>
@@ -105,36 +102,21 @@
 				</div>
 			</section>
 		<?php endif; ?>
-		<?php if( have_rows('epk-otherlinks', $post->ID) ): ?>
-			<section class="epk-genlinks">
-				<h1 class="epk-genlinks-header">Other Links</h1>
-				<div class="epk-genlinks-grid">
-					<?php while( have_rows('epk-otherlinks', $post->ID) ): the_row(); ?>
-						<div class="epk-genlinks-grid-item">
-							<?php if( !empty(get_sub_field('link')) ): ?>
-								<a target="_blank" href="<?php echo get_sub_field('link')['url'] ?>" class="epk-genlinks-grid-item-link">
-									<div class="epk-genlinks-grid-item-link-title">
-										<?php echo get_sub_field('link')['title'] ?>	
-									</div>
-								</a>
-							<?php endif; ?>
-						</div>
-					<?php endwhile; ?>
-				</div>
-			</section>
-		<?php endif; ?>
+		<?php render_genlinks('epk-otherlinks', 'Other Links', $post); ?>
 		<?php if( get_field('epk-photos', $post->ID) ): ?>
 			<section class="epk-photos">
-				<h1 class="epk-photos-header">Photos</h1>
-				<?php foreach( get_field('epk-photos', $post->ID) as $image ): ?>
-					<a href="<?php echo $image['sizes']['full']; ?>" class="epk-photos-grid-photo" style="background-image: url('<?php echo $image['sizes']['small']; ?>');"></a>
-				<?php endforeach; ?>
+				<h1 class="epk-photos-header fade fade-up">Photos</h1>
+				<div class="epk-photos-grid">
+					<?php foreach( get_field('epk-photos', $post->ID) as $image ): ?>
+						<a href="<?php echo $image['sizes']['large']; ?>" class="epk-photos-grid-photo fade fade-up" style="background-image: url('<?php echo $image['sizes']['medium']; ?>');"></a>
+					<?php endforeach; ?>
+				</div>
 			</section>
 		<?php endif; ?>
 		<?php if( !empty(get_field('epk-contactinfo', $post->ID)) ): ?>
 			<section class="epk-contactinfo">
-				<h1 class="epk-contactinfo-header">Contact</h1>
-				<div class="epk-contactinfo-content"><?php the_field('epk-contactinfo', $post->ID); ?></div>
+				<h1 class="epk-contactinfo-header fade fade-up">Contact</h1>
+				<div class="epk-contactinfo-content fade fade-up"><?php the_field('epk-contactinfo', $post->ID); ?></div>
 			</section>
 		<?php endif; ?>
 	</div>

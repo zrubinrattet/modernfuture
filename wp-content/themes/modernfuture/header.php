@@ -8,9 +8,9 @@
 		<meta property="og:locale" content="en_US">
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="Modern Future">
-		<meta property="og:description" content="Oakland Based Music Production">
+		<meta property="og:description" content="Oakland EDM Duo">
 		<meta property="og:site_name" content="Modern Future">
-		<meta property="og:image" content="http://modernfuture.net/new_site/wp-content/uploads/2016/03/Modern-Future-Circle-BlackBG.jpg">
+		<meta property="og:image" content="<?php echo get_template_directory_uri() . '/library/img/logo-whiteonblack.jpg'; ?>">
 		<link rel="canonical" href="http://modernfuture.net">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="google-site-verification" content="lnMH7EAE9EeiKyDdR4ySom0UOVJU90turXqFjT3xhJ8" />
