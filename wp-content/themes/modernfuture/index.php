@@ -31,8 +31,11 @@ get_header();
 		</div>
 		<div class="socialContainer--mobile">
 			<ul class="social">
-				<li class="social-item"><a class="social-item-link" href="https://soundcloud.com/modern-future" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
-				<li class="social-item"><a class="social-item-link" href="https://www.instagram.com/modern_future/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+				<li class="social-item"><a class="social-item-link" href="https://www.facebook.com/ModernFuture/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+							<li class="social-item"><a class="social-item-link" href="https://twitter.com/modern_future" target="_blank"><i class="fa fa-twitter"></i></a></li>
+							<li class="social-item"><a class="social-item-link" href="https://www.instagram.com/modern_future/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+							<li class="social-item"><a class="social-item-link" href="https://www.youtube.com/user/ModernFutureMusic" target="_blank"><i class="fa fa-youtube"></i></a></li>
+							<li class="social-item"><a class="social-item-link" href="https://soundcloud.com/modern-future" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
 			</ul>
 		</div>
 	</div>
