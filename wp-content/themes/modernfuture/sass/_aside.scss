@@ -58,7 +58,7 @@
 	.socialContainer--mobile{
 		display: block;
 	}
-	.epk{
+	.epklink{
 		position: absolute;
 	    bottom: 20px;
 	    left: 50%;
@@ -165,8 +165,5 @@
 		color: white;
 		@include font-size(30);
 		padding: 0 10px;
-	}
-	.epk{
-
 	}
 }

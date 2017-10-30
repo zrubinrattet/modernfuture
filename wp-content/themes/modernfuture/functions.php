@@ -98,10 +98,21 @@ add_action('init', 'init_handler');
 
 function remove_epk_page_supports() {
 
-	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
-	if( !isset( $post_id ) ) return;
+	$post_id;
+	
+	if( isset($_GET['post']) ){
+		$post_id = $_GET['post'];
+	}
+	else{
+		if( isset($_POST['post_ID']) ){
+			$post_id = $_POST['post_ID'];
+		}
+	}
+	
+	if( empty( $post_id ) ) return;
 
 	$homepgname = get_the_title($post_id);
+
 	if($homepgname == 'EPK'){ 
 		remove_post_type_support('page', 'editor');
 		remove_post_type_support('page', 'page-attributes');

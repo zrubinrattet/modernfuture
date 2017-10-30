@@ -120,6 +120,42 @@
 					}
 				},
 			},
+			epk : {
+				masonryData : [
+					{
+						grid : '.epk-pqprojects-grid-item-quotescontainer-quotes', 
+						gridItem : '.epk-pqprojects-grid-item-quotescontainer-quotes-quote'
+					},
+				],
+				content : $('.epk-hero-content'),
+				hero : $('.epk-hero'),
+				fadeEls : $('.fade'),
+				_init : function(){
+					app.epk.masonryData.forEach(app.epk._setupMasonry);
+					if( app.epk.content.length > 0 ){
+						$(window).on('scroll load', app.epk._fadeContent);
+					}
+					$(window).on('scroll resize load', app.epk._handleFades);
+				},
+				_handleFades : function(){
+					for( var i = 0; i < app.epk.fadeEls.length; i++ ){
+						if( $(window).scrollTop() + $(window).height() > $(app.epk.fadeEls[i]).offset().top + $(window).height() * 0.1 ){
+							$(app.epk.fadeEls[i]).removeClass('fade-up');
+						}
+					}
+				},
+				_fadeContent : function(){
+					app.epk.content.css('opacity', app.epk._map(
+						$(window).scrollTop(), 0, app.epk.hero.height() * 0.75, 1, 0
+					));
+				},
+				_map : function(n,i,o,r,t){return i>o?i>n?(n-i)*(t-r)/(o-i)+r:r:o>i?o>n?(n-i)*(t-r)/(o-i)+r:t:void 0;},
+				_setupMasonry : function(el, index){	
+					new Masonry(document.querySelector(el.grid), {
+						itemSelector : el.gridItem,
+					});
+				},
+			},
 			_resizeHandler : $(window).on('resize load', function(){
 				// if mobile
 				if($(window).width() < 1025){
@@ -150,6 +186,7 @@
 			_init : function(){
 				app.instagramSection._init();
 				app.menu._init();
+				app.epk._init();
 
 				$('#fullpage').fullpage({
 					scrollOverflow : true,
@@ -166,12 +203,6 @@
 						if(direction == 'up' && nextIndex == 1){
 							$('.instagramSectionContainer .fp-scrollable').slimScroll({ scrollTo: $('.instagramSectionContainer .fp-scrollable')[0].scrollHeight });	
 						}
-						// if(direction == 'down' && nextIndex == 2){
-						// 	$('.videosSectionContainer .fp-scrollable').slimScroll({ scrollTo: '0px' });	
-						// }
-						// if(direction == 'up' && nextIndex == 2){
-						// 	$('.videosSectionContainer .fp-scrollable').slimScroll({ scrollTo: $('.videosSectionContainer .fp-scrollable')[0].scrollHeight });	
-						// }
 					},
 					afterRender : function(){
 						$('.slimScrollBar').css({
