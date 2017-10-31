@@ -234,7 +234,6 @@
 		width: 100%;
 		height: 100%;
 		z-index: 1;
-		background-color: rgba(0,0,0,0.7);
 	}
 	.epk-photos-logos{
 		display: inline-block;
@@ -310,6 +309,9 @@
 				background-color: rgba(0,0,0,0.4);
 			}		
 		}
+	}
+	.epk-photos-grid-photo-tint{
+		background-color: rgba(0,0,0,0.7);
 	}
 	.epk-genlinks-grid-item-link-title,
 	.epk-photos-grid-photo-tint{
