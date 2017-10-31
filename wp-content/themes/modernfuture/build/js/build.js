@@ -145,7 +145,10 @@
 				},
 				_handleFades : function(){
 					for( var i = 0; i < app.epk.fadeEls.length; i++ ){
-						if( $(window).scrollTop() + $(window).height() > $(app.epk.fadeEls[i]).offset().top + $(window).height() * 0.05 ){
+						if( $(window).scrollTop() + $(window).height() > $(app.epk.fadeEls[i]).offset().top + $(window).height() * 0.05 && i !== app.epk.fadeEls.length - 1 ){
+							$(app.epk.fadeEls[i]).removeClass('fade-up');
+						}
+						else if( $(window).scrollTop() + $(window).height() > $(app.epk.fadeEls[i]).offset().top && i == app.epk.fadeEls.length - 1 ){
 							$(app.epk.fadeEls[i]).removeClass('fade-up');
 						}
 					}
