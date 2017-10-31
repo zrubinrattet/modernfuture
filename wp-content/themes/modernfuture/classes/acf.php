@@ -122,7 +122,6 @@
 						'type' => 'repeater',
 						'name' => 'epk-presslinks',
 						'button_label' => 'Add New Press Link',
-						'layout' => 'row',
 						'sub_fields' => array(
 							array(
 								'key' => 'field_zc0v9usdihdas',
@@ -130,6 +129,14 @@
 								'label' => 'Press Link',
 								'name' => 'link',
 								'instructions' => 'Add the name of the article title and it\'s URL here',
+							),
+							array(
+								'key' => 'field_8ioczvduhasdf',
+								'label' => 'Background Image Override',
+								'type' => 'image',
+								'name' => 'bgimage',
+								'return_format' => 'url',
+								'instructions' => 'If left blank the URL entered in the link field will be parsed for an OpenGraph image tag and use the MF logo as a fallback. Adding an image to this field overrides this behavior.',
 							),
 						),
 					),
@@ -139,7 +146,6 @@
 						'type' => 'repeater',
 						'name' => 'epk-musiclinks',
 						'button_label' => 'Add New Music Link',
-						'layout' => 'row',
 						'sub_fields' => array(
 							array(
 								'key' => 'field_zc0xv9oihaswea',
@@ -147,6 +153,14 @@
 								'label' => 'Music Link',
 								'name' => 'link',
 								'instructions' => 'Add the name of the song/service title and it\'s URL here',
+							),
+							array(
+								'key' => 'field_98foahifdsdafsh',
+								'label' => 'Background Image Override',
+								'type' => 'image',
+								'name' => 'bgimage',
+								'return_format' => 'url',
+								'instructions' => 'If left blank the URL entered in the link field will be parsed for an OpenGraph image tag and use the MF logo as a fallback. Adding an image to this field overrides this behavior.',
 							),
 						),
 					),
@@ -172,7 +186,6 @@
 						'type' => 'repeater',
 						'name' => 'epk-otherlinks',
 						'button_label' => 'Add New Other Link',
-						'layout' => 'row',
 						'sub_fields' => array(
 							array(
 								'key' => 'field_cz0oisadhfandas',
@@ -180,6 +193,14 @@
 								'label' => 'Link',
 								'name' => 'link',
 								'instructions' => 'Add the name of the link title and it\'s URL here',
+							),
+							array(
+								'key' => 'field_adpoahf08hoiafdh',
+								'label' => 'Background Image Override',
+								'type' => 'image',
+								'name' => 'bgimage',
+								'return_format' => 'url',
+								'instructions' => 'If left blank the URL entered in the link field will be parsed for an OpenGraph image tag and use the MF logo as a fallback. Adding an image to this field overrides this behavior.',
 							),
 						),
 					),

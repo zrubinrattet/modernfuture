@@ -77,8 +77,14 @@ function render_genlinks($slug, $title, $post){
 						<?php 
 						if( !empty(get_sub_field('link')) ): 
 							$link = get_sub_field('link')['url'];
-							$graph = OpenGraph::fetch($link);
-							$image = !empty($graph->image) ? $graph->image : get_template_directory_uri() . '/library/img/logotext-white.png';
+							$image;
+							if( empty( get_sub_field('bgimage') ) ){
+								$graph = OpenGraph::fetch($link);
+								$image = !empty($graph->image) ? $graph->image : get_template_directory_uri() . '/library/img/logotext-white.png';
+							}
+							else{
+								$image = get_sub_field('bgimage');
+							}
 						?>
 							<a target="_blank" href="<?php echo get_sub_field('link')['url'] ?>" class="epk-genlinks-grid-item-link" style="background-image: url('<?php echo $image ?>');">
 								<div class="epk-genlinks-grid-item-link-title">
