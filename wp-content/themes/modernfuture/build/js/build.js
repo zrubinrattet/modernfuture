@@ -133,7 +133,7 @@
 				_init : function(){
 					app.epk.masonryData.forEach(app.epk._setupMasonry);
 					if( app.epk.heroContent.length > 0 ){
-						$(window).on('scroll load', app.epk._fadeContent);
+						$(window).on('scroll load', app.epk._fadeHeroContent);
 						app.epk.heroContent.on('click', app.epk._heroContentClickHandler);
 					}
 					$(window).on('scroll resize load', app.epk._handleFades);
@@ -145,12 +145,12 @@
 				},
 				_handleFades : function(){
 					for( var i = 0; i < app.epk.fadeEls.length; i++ ){
-						if( $(window).scrollTop() + $(window).height() > $(app.epk.fadeEls[i]).offset().top + $(window).height() * 0.1 ){
+						if( $(window).scrollTop() + $(window).height() > $(app.epk.fadeEls[i]).offset().top + $(window).height() * 0.05 ){
 							$(app.epk.fadeEls[i]).removeClass('fade-up');
 						}
 					}
 				},
-				_fadeContent : function(){
+				_fadeHeroContent : function(){
 					app.epk.heroContent.css('opacity', app.epk._map(
 						$(window).scrollTop(), 0, app.epk.hero.height() * 0.75, 1, 0
 					));
