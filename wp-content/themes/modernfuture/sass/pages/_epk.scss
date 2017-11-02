@@ -209,6 +209,9 @@
 	.epk-photos{
 		background-color: black;
 		text-align: center;
+		> a:last-of-type{
+			margin-bottom: 120px;
+		}
 	}
 	.epk-photos-grid{
 		max-width: $large;
@@ -235,12 +238,12 @@
 		height: 100%;
 		z-index: 1;
 	}
-	.epk-photos-logos{
+	.epk-photos-button{
 		display: inline-block;
 		color: white;
 		background-color: $mauve;
 		padding: 10px 20px;
-		margin-bottom: 80px;
+		margin-bottom: 40px;
 		text-decoration: none;
 		text-transform: uppercase;
 	}

@@ -55,7 +55,7 @@
 			</section>
 		<?php endif; ?>
 		<?php 
-			render_genlinks('epk-presslinks', 'Press Links', $post); 
+			render_genlinks('epk-presslinks', 'Additional Press Links', $post); 
 			render_genlinks('epk-musiclinks', 'Music Links', $post); 
 		?>
 		<?php if( have_rows('epk-videolinks', $post->ID) ): ?>
@@ -84,10 +84,11 @@
 					<?php endforeach; ?>
 				</div>
 				<?php if( !empty(get_field('epk-logos', $post->ID)) ): ?>
-					<a href="<?php echo get_field('epk-logos', $post->ID)['url']; ?>" class="epk-photos-logos fade fade-up">Download Modern Future logos</a>
+					<a href="<?php echo get_field('epk-logos', $post->ID)['url']; ?>" class="epk-photos-button fade fade-up">Download Modern Future logos</a>
 				<?php endif; ?>
+				<br/>
 				<?php if( !empty(get_field('epk-albumartwork', $post->ID)) ): ?>
-					<a href="<?php echo get_field('epk-albumartwork', $post->ID)['url']; ?>" class="epk-photos-logos fade fade-up">Download album artwork</a>
+					<a href="<?php echo get_field('epk-albumartwork', $post->ID)['url']; ?>" class="epk-photos-button fade fade-up">Download album artwork</a>
 				<?php endif; ?>
 			</section>
 		<?php endif; ?>
