@@ -217,6 +217,12 @@
 						'name' => 'epk-logos',
 					),
 					array(
+						'key' => 'field_a80ehifoiasdfj',
+						'label' => 'Album Artwork Zip',
+						'type' => 'file',
+						'name' => 'epk-albumartwork',
+					),
+					array(
 						'key' => 'field_09czvhoidsaf',
 						'label' => 'Contact Info',
 						'type' => 'wysiwyg',

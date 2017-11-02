@@ -84,7 +84,10 @@
 					<?php endforeach; ?>
 				</div>
 				<?php if( !empty(get_field('epk-logos', $post->ID)) ): ?>
-					<a href="<?php echo get_field('epk-logos', $post->ID)['url']; ?>" class="epk-photos-logos fade fade-up">Get logos</a>
+					<a href="<?php echo get_field('epk-logos', $post->ID)['url']; ?>" class="epk-photos-logos fade fade-up">Download Modern Future logos</a>
+				<?php endif; ?>
+				<?php if( !empty(get_field('epk-albumartwork', $post->ID)) ): ?>
+					<a href="<?php echo get_field('epk-albumartwork', $post->ID)['url']; ?>" class="epk-photos-logos fade fade-up">Download album artwork</a>
 				<?php endif; ?>
 			</section>
 		<?php endif; ?>
