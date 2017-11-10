@@ -205,7 +205,7 @@
 					continuousVertical : true,
 					easingcss3 : 'ease-in-out',
 					touchSensitivity : 10,
-					anchors : ['instagramSection', 'videosSection', 'contactSection'],
+					anchors : ['instagramSection', 'videosSection', 'merchSection', 'contactSection'],
 					menu : $('#menu'),
 					responsiveWidth : 1025,
 					onLeave : function(index, nextIndex, direction){

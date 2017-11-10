@@ -23,6 +23,10 @@ get_header();
 					<a class="menu-item-link" href="#videosSection">videos</a>
 					<div class="menu-item-hover"></div>
 				</li>
+				<li class="menu-item" data-menuanchor="merchSection">
+					<a class="menu-item-link" href="#merchSection">merch</a>
+					<div class="menu-item-hover"></div>
+				</li>
 				<li class="menu-item" data-menuanchor="contactSection">
 					<a class="menu-item-link" href="#contactSection">contact</a>
 					<div class="menu-item-hover"></div>
@@ -53,6 +57,7 @@ get_header();
 <main id="fullpage">
 	<?php get_template_part('partials/pages/instagram_feed');?>
 	<?php get_template_part('partials/pages/videos');?>
+	<?php get_template_part('partials/pages/merch');?>
 	<?php get_template_part('partials/pages/contact');?>
 </main>
 <?php

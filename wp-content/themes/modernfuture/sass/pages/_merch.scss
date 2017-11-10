@@ -1,0 +1,51 @@
+@media only screen {
+	.merchSection{
+		max-width: 1080px;
+		margin: auto;
+		text-align: center;
+	}
+	.merchContainer{
+		width: 100%;
+	}
+	.merch{
+		width: 100%;
+		min-width: 320px;
+		padding: 0 10px;
+		box-sizing: border-box;
+		display: inline-block;
+		position: relative;
+		&:not(:first-child){
+			margin-top: 20px;
+		}
+	}
+	.merch-image{
+		width: 100%;
+		display: block;
+	}
+	.merch-description{
+		font-family: 'Futura', sans-serif;
+		font-weight: normal;
+		margin-top: 20px;
+		line-height: 1.5;
+	}
+}
+
+@media only screen and (min-width: $medium){
+	.merch{
+		max-width: 400px;
+	}
+}
+
+@media only screen and (min-width: $large){
+	.merchSection{
+		max-width: 1080px;
+	}
+	.merchContainer{
+		width: 50%;
+		float: left;
+	}
+	.merch{
+		padding: 0 30px;
+		max-width: 640px;
+	}
+}
