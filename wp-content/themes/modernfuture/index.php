@@ -27,6 +27,10 @@ get_header();
 					<a class="menu-item-link" href="#merchSection">merch</a>
 					<div class="menu-item-hover"></div>
 				</li>
+				<li class="menu-item" data-menuanchor="bioSection">
+					<a class="menu-item-link" href="#bioSection">bio</a>
+					<div class="menu-item-hover"></div>
+				</li>
 				<li class="menu-item" data-menuanchor="contactSection">
 					<a class="menu-item-link" href="#contactSection">contact</a>
 					<div class="menu-item-hover"></div>
@@ -58,6 +62,7 @@ get_header();
 	<?php get_template_part('partials/pages/instagram_feed');?>
 	<?php get_template_part('partials/pages/videos');?>
 	<?php get_template_part('partials/pages/merch');?>
+	<?php get_template_part('partials/pages/bio');?>
 	<?php get_template_part('partials/pages/contact');?>
 </main>
 <?php

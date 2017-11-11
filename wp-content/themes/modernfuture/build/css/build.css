@@ -116,8 +116,8 @@ footer, header, hgroup, menu, nav, section {
     color: white;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 36px;
-    font-size: 3.6rem;
+    font-size: 26px;
+    font-size: 2.6rem;
     padding: 10px 0;
     display: block; }
 
@@ -479,6 +479,16 @@ footer, header, hgroup, menu, nav, section {
   .merch {
     padding: 0 30px;
     max-width: 640px; } }
+@media only screen {
+  .bio-description {
+    max-width: 641px;
+    padding: 20px;
+    line-height: 1.5;
+    margin: 0 auto;
+    text-align: center; } }
+@media only screen and (min-width: 641px) {
+  .bio-description {
+    font-size: 1.8rem; } }
 @media only screen {
   .contactSection {
     display: -webkit-box;

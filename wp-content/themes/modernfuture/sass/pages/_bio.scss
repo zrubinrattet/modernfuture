@@ -1,0 +1,19 @@
+@media only screen {
+	.bio-description{
+		max-width: $medium;
+		padding: 20px;
+		line-height: 1.5;
+		margin: 0 auto;
+		text-align: center;
+	}
+}
+
+@media only screen and (min-width: $medium){
+	.bio-description{
+		font-size: 1.8rem;
+	}
+}
+
+@media only screen and (min-width: $large){
+	
+}
