@@ -177,6 +177,8 @@
 						$('.instagramSectionContainer .fp-section, .instagramSectionContainer .fp-slide, .instagramSectionContainer .fp-tableCell').css('height', 'auto !important');
 						$('.videosSectionContainer, .videosSectionContainer .fp-section, .videosSectionContainer .fp-tableCell, .videosSectionContainer .fp-scrollable, .videosSectionContainer .fp-tableCell, .videosSectionContainer .slimScrollDiv').css('height', '');
 						$('.videosSectionContainer .fp-section, .videosSectionContainer .fp-slide, .videosSectionContainer .fp-tableCell').css('height', 'auto !important');
+						$('.bioSectionContainer, .bioSectionContainer .fp-section, .bioSectionContainer .fp-tableCell, .bioSectionContainer .fp-scrollable, .bioSectionContainer .fp-tableCell, .bioSectionContainer .slimScrollDiv').css('height', '');
+						$('.bioSectionContainer .fp-section, .bioSectionContainer .fp-slide, .bioSectionContainer .fp-tableCell').css('height', 'auto !important');
 					}, 500);
 					
 				}
